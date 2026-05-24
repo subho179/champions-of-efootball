@@ -1,0 +1,20 @@
+coe-tournament/
+│
+├── db.php
+│
+├── index.php
+├── players.php
+├── fixtures.php
+├── results.php
+│
+├── includes/
+│   ├── sidebar.php
+│   ├── topbar.php
+│   └── layout.css
+│
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+└── database.sql
