@@ -4,7 +4,9 @@
 
     <div class="logo">
 
-        <span class="logo-icon">🏆</span>
+        <span class="logo-icon">
+            🏆
+        </span>
 
         <span class="logo-text">
 
@@ -16,7 +18,7 @@
 
 
 
-    <!-- NAVIGATION -->
+    <!-- DESKTOP NAV -->
 
     <div class="nav-links">
 
@@ -36,9 +38,9 @@
 
 
 
-    <!-- LOGIN BUTTON -->
+    <!-- DESKTOP LOGIN -->
 
-    <div>
+    <div class="desktop-login">
 
         <a href="login.php"
            class="login-btn">
@@ -48,6 +50,55 @@
         </a>
 
     </div>
+
+
+
+    <!-- MOBILE TOGGLE -->
+
+    <div class="menu-toggle"
+         onclick="toggleMenu()">
+
+         ☰
+
+    </div>
+
+</div>
+
+
+
+<!-- OVERLAY -->
+
+<div class="menu-overlay"
+     id="menuOverlay"
+     onclick="toggleMenu()">
+
+</div>
+
+
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu"
+     id="mobileMenu">
+
+    <a href="index.php">🏠 Home</a>
+
+    <a href="standings.php">📊 Standings</a>
+
+    <a href="fixtures.php">📅 Fixtures</a>
+
+    <a href="results.php">🏆 Results</a>
+
+    <a href="stats.php">📈 Stats</a>
+
+    <a href="playoffs.php">⚔️ Playoffs</a>
+
+    <a href="login.php"
+       class="mobile-login">
+
+       🔐 Admin Login
+
+    </a>
 
 </div>
 
@@ -62,11 +113,6 @@
     font-family:Arial;
 }
 
-body{
-    background:#070707;
-    color:white;
-}
-
 
 
 /* NAVBAR */
@@ -74,6 +120,8 @@ body{
 .navbar{
 
     width:100%;
+    
+    max-width:100vw;
 
     height:85px;
 
@@ -91,11 +139,13 @@ body{
 
     z-index:1000;
 
-    background:rgba(10,10,10,0.85);
+    background:
+    rgba(10,10,10,0.88);
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(14px);
 
-    border-bottom:1px solid rgba(255,153,0,0.15);
+    border-bottom:
+    1px solid rgba(255,153,0,0.12);
 
 }
 
@@ -119,7 +169,8 @@ body{
 
     color:#ff9900;
 
-    text-shadow:0 0 15px #ff9900;
+    text-shadow:
+    0 0 15px #ff9900;
 
 }
 
@@ -137,7 +188,7 @@ body{
 
 
 
-/* NAV LINKS */
+/* DESKTOP LINKS */
 
 .nav-links{
 
@@ -163,19 +214,20 @@ body{
 
 
 
-/* HOVER EFFECT */
+/* HOVER */
 
 .nav-links a:hover{
 
     color:#ff9900;
 
-    text-shadow:0 0 10px #ff9900;
+    text-shadow:
+    0 0 10px #ff9900;
 
 }
 
 
 
-/* UNDERLINE ANIMATION */
+/* UNDERLINE */
 
 .nav-links a::after{
 
@@ -209,7 +261,8 @@ body{
 
 .login-btn{
 
-    background:linear-gradient(
+    background:
+    linear-gradient(
         135deg,
         #ff9900,
         #ff6600
@@ -225,7 +278,8 @@ body{
 
     font-weight:bold;
 
-    box-shadow:0 0 15px rgba(255,153,0,0.4);
+    box-shadow:
+    0 0 15px rgba(255,153,0,0.4);
 
     transition:0.3s;
 
@@ -235,7 +289,191 @@ body{
 
     transform:translateY(-2px);
 
-    box-shadow:0 0 25px rgba(255,153,0,0.8);
+    box-shadow:
+    0 0 25px rgba(255,153,0,0.8);
+
+}
+
+
+
+/* MOBILE TOGGLE */
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:34px;
+
+    color:#ff9900;
+
+    cursor:pointer;
+
+}
+
+
+
+/* OVERLAY */
+
+.menu-overlay{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100vh;
+
+    background:
+    rgba(0,0,0,0.55);
+
+    backdrop-filter:blur(4px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:0.3s;
+
+    z-index:1500;
+
+}
+
+
+
+/* ACTIVE OVERLAY */
+
+.menu-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+/* MOBILE MENU */
+
+.mobile-menu{
+
+    position:fixed;
+
+    top:0;
+
+    right:-100%;
+
+    width:320px;
+
+    max-width:85%;
+
+    height:100vh;
+    
+    overflow-y:auto;
+
+    background:
+    rgba(8,8,8,0.98);
+
+    backdrop-filter:blur(18px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:120px 25px 40px;
+
+    gap:18px;
+
+    transition:0.35s ease;
+
+    z-index:2000;
+
+    border-left:
+    1px solid rgba(255,153,0,0.18);
+
+    box-shadow:
+    -10px 0 40px rgba(0,0,0,0.6);
+
+}
+
+
+
+/* ACTIVE */
+
+.mobile-menu.active{
+
+    right:0;
+
+}
+
+
+
+/* LINKS */
+
+.mobile-menu a{
+
+    width:100%;
+
+    padding:18px 20px;
+
+    border-radius:16px;
+
+    background:
+    rgba(255,255,255,0.03);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+    border:
+    1px solid rgba(255,153,0,0.05);
+
+}
+
+
+
+/* HOVER */
+
+.mobile-menu a:hover{
+
+    background:
+    rgba(255,153,0,0.1);
+
+    color:#ff9900;
+
+    transform:translateX(6px);
+
+}
+
+
+
+/* MOBILE LOGIN */
+
+.mobile-login{
+
+    margin-top:10px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff9900,
+        #ff6600
+    ) !important;
+
+    color:black !important;
+
+    text-align:center;
+
+    box-shadow:
+    0 0 20px rgba(255,153,0,0.4);
 
 }
 
@@ -245,28 +483,71 @@ body{
 
 @media(max-width:900px){
 
-    .navbar{
+    .nav-links{
 
-        flex-direction:column;
-
-        height:auto;
-
-        padding:25px;
-
-        gap:20px;
+        display:none;
 
     }
 
-    .nav-links{
+    .desktop-login{
 
-        flex-wrap:wrap;
+        display:none;
 
-        justify-content:center;
+    }
 
-        gap:20px;
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .navbar{
+
+        padding:0 25px;
+
+    }
+
+}
+
+
+
+/* DESKTOP */
+
+@media(min-width:901px){
+
+    .mobile-menu{
+
+        display:none;
+
+    }
+
+    .menu-overlay{
+
+        display:none;
 
     }
 
 }
 
 </style>
+
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+    .getElementById("mobileMenu")
+    .classList
+    .toggle("active");
+
+
+    document
+    .getElementById("menuOverlay")
+    .classList
+    .toggle("active");
+
+}
+
+</script>

@@ -7,6 +7,13 @@ include __DIR__ . '/assets/db.php';
 
 <head>
 
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="icon"
+      type="image/x-icon"
+      href="favicon.ico">
+    
     <title>
         Champions of eFootball
     </title>
@@ -23,18 +30,20 @@ include __DIR__ . '/assets/db.php';
             font-family:Arial;
         }
 
-        body{
+     body{
 
-            background:
-            radial-gradient(circle at top,
-            #1a1a1a,
-            #050505);
+    background:
+    radial-gradient(circle at top,
+    #1a1a1a,
+    #050505);
 
-            color:white;
+    color:white;
 
-            overflow-x:hidden;
+    overflow-x:hidden;
 
-        }
+    width:100%;
+
+}
 
 
 
@@ -55,7 +64,12 @@ include __DIR__ . '/assets/db.php';
             padding:40px;
 
             position:relative;
-
+			
+            width:100%;
+            
+			max-width:100%;
+            
+			overflow:hidden;
         }
 
 
@@ -277,6 +291,24 @@ include __DIR__ . '/assets/db.php';
             }
 
         }
+        /* GLOBAL MOBILE FIX */
+
+html,
+body{
+
+    width:100%;
+
+    overflow-x:hidden;
+
+}
+
+
+
+*{
+
+    max-width:100%;
+
+}
 
     </style>
 
@@ -2140,99 +2172,102 @@ LIMIT 4"
 
 <footer class="footer">
 
-    <!-- GLOW -->
 
-    <div class="footer-glow"></div>
+    <!-- LOGO -->
 
+    <div class="footer-logo">
 
-
-    <!-- TOP -->
-
-    <div class="footer-top">
-
-
-        <!-- BRAND -->
-
-        <div class="footer-brand">
-
-            <h2>
-
-                🏆 COE
-
-            </h2>
-
-            <p>
-
-                Champions of eFootball —
-                powering India’s competitive
-                eFootball future with futuristic
-                esports leagues and elite gameplay.
-
-            </p>
-
-        </div>
-
-
-
-        <!-- QUICK LINKS -->
-
-        <div class="footer-links">
-
-            <h3>
-                Quick Links
-            </h3>
-
-            <a href="index.php">Home</a>
-
-            <a href="standings.php">Standings</a>
-
-            <a href="fixtures.php">Fixtures</a>
-
-            <a href="results.php">Results</a>
-
-            <a href="stats.php">Statistics</a>
-
-            <a href="playoffs.php">Playoffs</a>
-
-        </div>
-
-
-
-        <!-- LEAGUE INFO -->
-
-        <div class="footer-info">
-
-            <h3>
-                League Info
-            </h3>
-
-            <p>
-                🎮 eFootball 2026 Mobile
-            </p>
-
-            <p>
-                🇮🇳 Indian Esports League
-            </p>
-
-            <p>
-                ⚔️ BO3 Playoff System
-            </p>
-
-            <p>
-                🏆 Dynamic Tournament Engine
-            </p>
-
-        </div>
+        🏆 COE
 
     </div>
 
 
 
-    <!-- BOTTOM -->
+    <!-- TEXT -->
+
+    <p class="footer-text">
+
+        Champions of eFootball —
+        India’s futuristic esports league platform.
+
+    </p>
+
+
+
+ <!-- SOCIAL ICONS -->
+
+<div class="social-links">
+
+
+    <!-- DISCORD -->
+
+    <a href="https://discord.gg/YOURSERVER"
+       class="social-icon discord"
+       target="_blank">
+
+       <i class="fab fa-discord"></i>
+
+    </a>
+
+
+
+    <!-- INSTAGRAM -->
+
+    <a href="https://www.instagram.com/champions_of_efootball?igsh=OW5kNDZrcGd4Zmgw"
+       class="social-icon instagram"
+       target="_blank">
+
+       <i class="fab fa-instagram"></i>
+
+    </a>
+
+
+
+    <!-- YOUTUBE -->
+
+    <a href="https://youtube.com"
+       class="social-icon youtube"
+       target="_blank">
+
+       <i class="fab fa-youtube"></i>
+
+    </a>
+
+
+
+    <!-- WHATSAPP -->
+
+    <a href="https://wa.me/91XXXXXXXXXX"
+       class="social-icon whatsapp"
+       target="_blank">
+
+       <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+
+
+    <!-- GITHUB -->
+
+    <a href="https://github.com"
+       class="social-icon github"
+       target="_blank">
+
+       <i class="fab fa-github"></i>
+
+    </a>
+
+</div>
+
+
+
+    <!-- COPYRIGHT -->
 
     <div class="footer-bottom">
 
-        © 2026 Champions of eFootball.
+        © <?php echo date("Y"); ?>
+
+        Champions of eFootball.
         All Rights Reserved.
 
     </div>
@@ -2247,16 +2282,199 @@ LIMIT 4"
 
 .footer{
 
-    position:relative;
+    margin-top:120px;
 
-    background:#050505;
+    padding:70px 20px 40px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        to top,
+        rgba(255,153,0,0.06),
+        rgba(0,0,0,0.95)
+    );
 
     border-top:
     1px solid rgba(255,153,0,0.12);
 
-    margin-top:120px;
+}
+
+
+
+/* LOGO */
+
+.footer-logo{
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:#ff9900;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 20px rgba(255,153,0,0.7);
+
+}
+
+
+
+/* TEXT */
+
+.footer-text{
+
+    color:#bdbdbd;
+
+    max-width:650px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+    margin-bottom:45px;
+
+}
+
+
+
+/* SOCIALS */
+
+.social-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:22px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:45px;
+
+}
+
+
+
+/* ICON */
+
+.social-icon{
+
+    width:68px;
+
+    height:68px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:30px;
+
+    transition:0.35s;
+
+    position:relative;
 
     overflow:hidden;
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+}
+
+
+
+/* DISCORD */
+
+.discord{
+
+    background:
+    rgba(88,101,242,0.12);
+
+    color:#5865F2;
+
+    box-shadow:
+    0 0 20px rgba(88,101,242,0.2);
+
+}
+
+
+
+/* INSTAGRAM */
+
+.instagram{
+
+    background:
+    rgba(255,0,120,0.12);
+
+    color:#ff4da6;
+
+    box-shadow:
+    0 0 20px rgba(255,0,120,0.2);
+
+}
+
+
+
+/* YOUTUBE */
+
+.youtube{
+
+    background:
+    rgba(255,0,0,0.12);
+
+    color:#ff3333;
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,0.2);
+
+}
+
+
+
+/* WHATSAPP */
+
+.whatsapp{
+
+    background:
+    rgba(37,211,102,0.12);
+
+    color:#25D366;
+
+    box-shadow:
+    0 0 20px rgba(37,211,102,0.2);
+
+}
+
+/* GITHUB */
+
+.github{
+
+    background:
+    rgba(255,255,255,0.08);
+
+    color:white;
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,0.12);
+
+}
+
+/* HOVER */
+
+.social-icon:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.1);
 
 }
 
@@ -2264,151 +2482,51 @@ LIMIT 4"
 
 /* GLOW */
 
-.footer-glow{
+.social-icon::before{
+
+    content:"";
 
     position:absolute;
 
-    width:350px;
+    width:100%;
 
-    height:350px;
+    height:100%;
 
-    background:#ff9900;
+    background:
+    rgba(255,255,255,0.08);
 
-    filter:blur(180px);
+    top:-100%;
 
-    opacity:0.06;
+    left:0;
 
-    top:-120px;
-
-    left:50%;
-
-    transform:translateX(-50%);
+    transition:0.4s;
 
 }
 
 
 
-/* TOP */
+/* SHINE */
 
-.footer-top{
+.social-icon:hover::before{
 
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
-
-    gap:50px;
-
-    padding:90px 60px;
-
-    position:relative;
-
-    z-index:2;
+    top:0;
 
 }
 
 
 
-/* BRAND */
-
-.footer-brand h2{
-
-    color:#ff9900;
-
-    font-size:38px;
-
-    margin-bottom:20px;
-
-    text-shadow:
-    0 0 20px rgba(255,153,0,0.5);
-
-}
-
-.footer-brand p{
-
-    color:#bdbdbd;
-
-    line-height:1.8;
-
-    font-size:16px;
-
-}
-
-
-
-/* TITLES */
-
-.footer-links h3,
-.footer-info h3{
-
-    color:white;
-
-    margin-bottom:25px;
-
-    font-size:22px;
-
-}
-
-
-
-/* LINKS */
-
-.footer-links{
-
-    display:flex;
-
-    flex-direction:column;
-
-}
-
-.footer-links a{
-
-    color:#bdbdbd;
-
-    text-decoration:none;
-
-    margin-bottom:14px;
-
-    transition:0.3s;
-
-}
-
-.footer-links a:hover{
-
-    color:#ff9900;
-
-    transform:translateX(6px);
-
-}
-
-
-
-/* INFO */
-
-.footer-info p{
-
-    color:#bdbdbd;
-
-    margin-bottom:14px;
-
-}
-
-
-
-/* BOTTOM */
+/* COPYRIGHT */
 
 .footer-bottom{
 
-    border-top:
-    1px solid rgba(255,255,255,0.05);
-
-    text-align:center;
-
-    padding:25px;
-
-    color:#888;
+    color:#777;
 
     font-size:15px;
+
+    border-top:
+    1px solid rgba(255,255,255,0.06);
+
+    padding-top:25px;
 
 }
 
@@ -2418,9 +2536,25 @@ LIMIT 4"
 
 @media(max-width:768px){
 
-    .footer-top{
+    .footer-logo{
 
-        padding:70px 25px;
+        font-size:34px;
+
+    }
+
+    .footer-text{
+
+        font-size:16px;
+
+    }
+
+    .social-icon{
+
+        width:58px;
+
+        height:58px;
+
+        font-size:24px;
 
     }
 
