@@ -44,12 +44,36 @@ if(!$player){
 
 /* PLAYER STATS */
 
-$wins = $player['wins'] ?? 0;
-$losses = $player['losses'] ?? 0;
-$draws = $player['draws'] ?? 0;
-$goals_scored = $player['goals_scored'] ?? 0;
-$goals_conceded = $player['goals_conceded'] ?? 0;
-$points = $player['points'] ?? 0;
+$player_id = $player['id'];
+
+
+
+$stats = mysqli_fetch_assoc(
+
+mysqli_query(
+
+$conn,
+
+"SELECT * FROM standings
+WHERE player_id='$player_id'"
+
+)
+
+);
+
+
+
+$wins = $stats['wins'] ?? 0;
+
+$losses = $stats['losses'] ?? 0;
+
+$draws = $stats['draws'] ?? 0;
+
+$goals_scored = $stats['goals_for'] ?? 0;
+
+$goals_conceded = $stats['goals_against'] ?? 0;
+
+$points = $stats['points'] ?? 0;
 
 ?>
 
