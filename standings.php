@@ -329,6 +329,33 @@ table tr:hover{
 
 
 
+/* PLAYER LINK */
+
+.player-link{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+}
+
+
+
+.player-link:hover{
+
+    color:#ff9900;
+
+    text-shadow:
+    0 0 10px #ff9900;
+
+}
+
+
+
 /* POINTS */
 
 .points{
@@ -407,7 +434,7 @@ table tr:hover{
 $top_three = mysqli_query($conn,
 
 "SELECT standings.*,
-        players.player_name
+players.player_name
 
 FROM standings
 
@@ -447,17 +474,17 @@ while($row = mysqli_fetch_assoc($top_three)){
 
         if($rank == 1){
 
-            echo "🥇";
+            echo '🥇';
 
         }
         elseif($rank == 2){
 
-            echo "🥈";
+            echo '🥈';
 
         }
         else{
 
-            echo "🥉";
+            echo '🥉';
 
         }
 
@@ -469,7 +496,17 @@ while($row = mysqli_fetch_assoc($top_three)){
 
     <div class="podium-name">
 
-        <?php echo $row['player_name']; ?>
+        <a href="player.php?player=<?php
+echo urlencode($row['player_name']);
+?>"
+
+class="player-link">
+
+<?php
+echo $row['player_name'];
+?>
+
+</a>
 
     </div>
 
@@ -519,7 +556,7 @@ $rank++;
 $table = mysqli_query($conn,
 
 "SELECT standings.*,
-        players.player_name
+players.player_name
 
 FROM standings
 
@@ -580,7 +617,17 @@ while($row = mysqli_fetch_assoc($table)){
 
 <td class="player-name">
 
-<?php echo $row['player_name']; ?>
+<a href="player.php?player=<?php
+echo urlencode($row['player_name']);
+?>"
+
+class="player-link">
+
+<?php
+echo $row['player_name'];
+?>
+
+</a>
 
 </td>
 

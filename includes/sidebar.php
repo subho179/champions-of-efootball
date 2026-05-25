@@ -16,6 +16,17 @@
             <a href="players.php">👥 Players</a>
         </li>
 
+	<li> 
+	<a href="registrations.php">
+
+	<i class="fas fa-user-plus"></i>
+
+	Registrations
+
+	</a>
+
+	</li>
+
         <li>
             <a href="fixtures.php">📅 Fixtures</a>
         </li>

@@ -310,6 +310,107 @@ body{
 
 }
 
+/* HERO BUTTONS */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:25px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    margin-top:50px;
+
+}
+
+
+
+/* BUTTON */
+
+.hero-btn{
+
+    display:inline-block;
+
+    padding:18px 38px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+
+}
+
+
+
+/* PRIMARY */
+
+.hero-btn-primary{
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff9900,
+    #ff6600
+    );
+
+    color:black;
+
+    box-shadow:
+    0 0 30px rgba(255,153,0,0.45);
+
+}
+
+
+
+/* SECONDARY */
+
+.hero-btn-secondary{
+
+    border:
+    2px solid #ff9900;
+
+    color:#ff9900;
+
+    background:transparent;
+
+}
+
+
+
+/* HOVER */
+
+.hero-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero-btn{
+
+        width:100%;
+
+        text-align:center;
+
+        font-size:20px;
+
+    }
+
+}
+
     </style>
 
 </head>
@@ -371,22 +472,23 @@ body{
 
         <div class="hero-buttons">
 
-            <a href="standings.php"
-               class="btn-primary">
+    <a href="register.php"
+    class="hero-btn hero-btn-primary">
 
-               View Standings
+    Join Tournament
 
-            </a>
+    </a>
 
 
-            <a href="fixtures.php"
-               class="btn-secondary">
 
-               Upcoming Fixtures
+    <a href="fixtures.php"
+    class="hero-btn hero-btn-secondary">
 
-            </a>
+    Upcoming Fixtures
 
-        </div>
+    </a>
+
+	</div>
 
     </div>
 

@@ -51,6 +51,25 @@ if (isset($_GET['delete'])) {
 
     <title>Champions of eFootball - Players</title>
 
+<style>
+
+.edit-btn{
+
+    background:#3b82f6;
+
+    color:white;
+
+    padding:10px 16px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    margin-right:10px;
+
+}
+
+</style>
 </head>
 
 <body>
@@ -291,7 +310,17 @@ if (isset($_GET['delete'])) {
                            Delete
 
                         </a>
+			
+			<a href="edit-player.php?id=<?php
+			echo $row['id'];
+					?>"
 
+			class="edit-btn">
+
+			Edit
+
+			</a>
+			
                     </td>
 
                 </tr>
