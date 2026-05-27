@@ -94,7 +94,7 @@ body{
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(340px,1fr));
+    repeat(2,1fr);
 
     gap:30px;
 
@@ -202,9 +202,11 @@ body{
 
     display:flex;
 
+    align-items:center;
+
     justify-content:space-between;
 
-    align-items:center;
+    gap:20px;
 
     margin-bottom:35px;
 
@@ -216,15 +218,37 @@ body{
 
 .result-player{
 
-    width:40%;
+    flex:1;
 
     text-align:center;
 
-    font-size:24px;
+    font-size:28px;
 
     font-weight:bold;
 
-    line-height:1.5;
+    line-height:1.4;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+}
+
+
+
+/* SCORE BOX */
+
+.score-box{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:18px;
 
 }
 
@@ -232,16 +256,34 @@ body{
 
 /* SCORE */
 
-.result-score{
+.score-number{
 
-    font-size:48px;
+    font-size:72px;
 
     font-weight:bold;
 
     color:#ff9900;
 
+    min-width:80px;
+
+    text-align:center;
+
     text-shadow:
-    0 0 18px rgba(255,153,0,0.7);
+    0 0 18px rgba(255,153,0,0.6);
+
+}
+
+
+
+/* DASH */
+
+.score-dash{
+
+    font-size:52px;
+
+    font-weight:bold;
+
+    color:#ff9900;
 
 }
 
@@ -297,11 +339,31 @@ body{
 
     }
 
+
+
     .results-section{
 
-        padding:0 25px 80px;
+        padding:0 20px 80px;
 
     }
+
+
+
+    .results-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .result-card{
+
+        padding:28px 18px;
+
+    }
+
+
 
     .result-player{
 
@@ -309,9 +371,21 @@ body{
 
     }
 
-    .result-score{
 
-        font-size:34px;
+
+    .score-number{
+
+        font-size:42px;
+
+        min-width:45px;
+
+    }
+
+
+
+    .score-dash{
+
+        font-size:28px;
 
     }
 
@@ -396,6 +470,7 @@ while($row = mysqli_fetch_assoc($results)){
 <div class="result-card">
 
 
+
     <!-- ROUND -->
 
     <div class="result-round">
@@ -412,6 +487,8 @@ while($row = mysqli_fetch_assoc($results)){
 
     <div class="result-match">
 
+
+
         <div class="result-player">
 
             <?php echo $row['home_player']; ?>
@@ -420,13 +497,29 @@ while($row = mysqli_fetch_assoc($results)){
 
 
 
-        <div class="result-score">
+        <div class="score-box">
 
-            <?php echo $row['home_score']; ?>
+            <span class="score-number">
 
-            -
+                <?php echo $row['home_score']; ?>
 
-            <?php echo $row['away_score']; ?>
+            </span>
+
+
+
+            <span class="score-dash">
+
+                -
+
+            </span>
+
+
+
+            <span class="score-number">
+
+                <?php echo $row['away_score']; ?>
+
+            </span>
 
         </div>
 
