@@ -1,3 +1,17 @@
+<head>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Exo+2:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
 <div class="navbar">
 
     <!-- LOGO -->
@@ -22,17 +36,17 @@
 
     <div class="nav-links">
 
-        <a href="index.php">Home</a>
+        <a href="index.php">HOME</a>
 
-        <a href="standings.php">Standings</a>
+        <a href="standings.php">STANDINGS</a>
 
-        <a href="fixtures.php">Fixtures</a>
+        <a href="fixtures.php">FIXTURES</a>
 
-        <a href="results.php">Results</a>
+        <a href="results.php">RESULTS</a>
 
-        <a href="stats.php">Stats</a>
+        <a href="stats.php">STATS</a>
 
-        <a href="playoffs.php">Playoffs</a>
+        <a href="playoffs.php">PLAYOFFS</a>
 
     </div>
 
@@ -81,22 +95,22 @@
 <div class="mobile-menu"
      id="mobileMenu">
 
-    <a href="index.php">🏠 Home</a>
+    <a href="index.php">HOME</a>
 
-    <a href="standings.php">📊 Standings</a>
+    <a href="standings.php">STANDINGS</a>
 
-    <a href="fixtures.php">📅 Fixtures</a>
+    <a href="fixtures.php">FIXTURES</a>
 
-    <a href="results.php">🏆 Results</a>
+    <a href="results.php">RESULTS</a>
 
-    <a href="stats.php">📈 Stats</a>
+    <a href="stats.php">STATS</a>
 
-    <a href="playoffs.php">⚔️ Playoffs</a>
+    <a href="playoffs.php">PLAYOFFS</a>
 
     <a href="login.php"
        class="mobile-login">
 
-       🔐 Admin Login
+        Admin Login
 
     </a>
 
@@ -110,10 +124,27 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial;
+    font-family:'Exo 2',sans-serif;
+}
+
+body{
+
+    font-family:'Exo 2',sans-serif;
+
 }
 
 
+
+/* TITLES */
+
+h1,h2,h3,h4,h5,h6,
+.logo,
+.hero-title,
+.section-title{
+
+    font-family:'Orbitron',sans-serif;
+
+}
 
 /* NAVBAR */
 

@@ -27,7 +27,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             margin:0;
             padding:0;
             box-sizing:border-box;
-            font-family:Arial;
+            font-family:'Exo 2',sans-serif;
         }
 
      body{
@@ -123,7 +123,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
             text-transform:uppercase;
 
             letter-spacing:3px;
-
+	    
+	    font-family:'Orbitron',sans-serif;
         }
 
 
@@ -560,7 +561,7 @@ LIMIT 1"
 
     <div class="section-title">
 
-        ⚡ LIVE LEAGUE STATS
+         LIVE LEAGUE STATS
 
     </div>
 
@@ -885,7 +886,694 @@ LIMIT 1"
 
 }
 
+/* HUB */
+
+.coe-hub{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    z-index:9999;
+
+}
+
+
+
+/* BUTTON */
+
+.hub-toggle{
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    background:
+
+    linear-gradient(
+    135deg,
+    #ff9900,
+    #ffb300
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    box-shadow:
+
+    0 0 18px rgba(255,153,0,0.45),
+    0 0 40px rgba(255,153,0,0.18);
+
+    transition:0.35s;
+
+    animation:
+    hubPulse 3s infinite;
+
+}
+
+
+
+/* LOGO */
+
+.hub-toggle img{
+
+    width:62px;
+
+    height:62px;
+
+    object-fit:contain;
+
+    transform:scale(1.15);
+
+}
+
+
+
+/* HOVER */
+
+.hub-toggle:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+
+    0 0 28px rgba(255,153,0,0.7),
+    0 0 55px rgba(255,153,0,0.28);
+
+}
+
+
+
+/* MENU */
+
+.hub-menu{
+
+    position:absolute;
+
+    bottom:95px;
+
+    right:85px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+    translateY(20px);
+
+    transition:0.35s;
+
+}
+
+
+
+/* ACTIVE */
+
+.hub-menu.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+    translateY(0);
+
+}
+
+
+
+/* ITEMS */
+
+.hub-item{
+
+    min-width:220px;
+
+    padding:15px 20px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:700;
+
+    background:
+    rgba(18,18,18,0.92);
+
+    border:
+    1px solid rgba(255,153,0,0.1);
+
+    backdrop-filter:blur(16px);
+
+    transition:0.3s;
+
+    box-shadow:
+    0 0 14px rgba(255,153,0,0.05);
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+
+
+/* HOVER */
+
+.hub-item:hover{
+
+    transform:translateX(-6px);
+
+    border-color:
+    rgba(255,153,0,0.35);
+
+    color:#ffb300;
+
+    box-shadow:
+    0 0 22px rgba(255,153,0,0.15);
+
+}
+
+
+
+/* PULSE */
+
+@keyframes hubPulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.04);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.hub-menu{
+
+    right:75px;
+
+    bottom:75px;
+
+}
+
+.hub-item{
+
+    width:180px;
+
+    font-size:14px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .coe-hub{
+
+        bottom:20px;
+
+        right:20px;
+
+    }
+
+    .hub-toggle{
+
+        width:64px;
+
+        height:64px;
+
+    }
+
+    .hub-toggle img{
+
+    width:50px;
+
+    height:50px;
+
+    transform:scale(1.1);
+
+}
+
+    .hub-item{
+
+        min-width:180px;
+
+        font-size:14px;
+
+    }
+
+}
+
+/* MODAL */
+
+.hub-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,0.72);
+
+    backdrop-filter:blur(12px);
+
+    z-index:99999;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:0.35s;
+
+}
+
+
+
+/* ACTIVE */
+
+.hub-modal.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+
+/* BOX */
+
+.hub-modal-box{
+
+    width:90%;
+
+    max-width:1100px;
+
+    height:85vh;
+
+    border-radius:26px;
+
+    overflow:hidden;
+
+    background:
+    rgba(12,12,12,0.96);
+
+    border:
+    1px solid rgba(255,153,0,0.18);
+
+    box-shadow:
+    0 0 50px rgba(255,153,0,0.12);
+
+    display:flex;
+
+    flex-direction:column;
+
+    transform:scale(0.9);
+
+    transition:0.35s;
+
+}
+
+
+
+/* SCALE */
+
+.hub-modal.active .hub-modal-box{
+
+    transform:scale(1);
+
+}
+
+
+
+/* TOP */
+
+.hub-modal-top{
+
+    height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 24px;
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.06);
+
+}
+
+
+
+/* TITLE */
+
+.hub-modal-title{
+
+    font-size:24px;
+
+    font-weight:800;
+
+    color:#ffb300;
+
+}
+
+
+
+/* ACTIONS */
+
+.hub-modal-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+
+
+/* FULL PAGE */
+
+#hubFullPage{
+
+    text-decoration:none;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    background:
+    rgba(255,153,0,0.12);
+
+    color:#ffb300;
+
+    font-weight:700;
+
+}
+
+
+
+/* CLOSE */
+
+#closeHubModal{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+
+
+/* IFRAME */
+
+#hubFrame{
+
+    flex:1;
+
+    width:100%;
+
+    border:none;
+
+    background:#000;
+
+}
+
+
+
+/* BUTTON FIX */
+
+.hub-item{
+
+    cursor:pointer;
+
+}
+
 </style>
+
+<!-- COE HUB -->
+
+<div class="coe-hub">
+
+    <button class="hub-toggle"
+    id="hubToggle">
+
+        <img src="assets/images/coe-hub.png">
+
+    </button>
+
+
+
+    <div class="hub-menu"
+    id="hubMenu">
+
+        <a href="news.php"
+        class="hub-item">
+
+             News
+
+        </a>
+
+
+
+       <button
+class="hub-item open-hub-page"
+data-title="Roadmap"
+data-page="roadmap-modal.php">
+
+ Roadmap
+
+</button>
+
+
+
+       <button
+class="hub-item open-hub-page"
+data-title="Changelog"
+data-page="changelog-modal.php">
+
+ Changelog
+
+</button>
+
+    </div>
+
+</div>
+
+
+<!-- HUB MODAL -->
+
+<div class="hub-modal"
+id="hubModal">
+
+    <div class="hub-modal-box">
+
+        <!-- TOP BAR -->
+
+        <div class="hub-modal-top">
+
+            <div class="hub-modal-title"
+            id="hubModalTitle">
+
+                Changelog
+
+            </div>
+
+
+
+            <div class="hub-modal-actions">
+
+                <a href="#"
+                target="_blank"
+                id="hubFullPage">
+
+                    ↗ Full Page
+
+                </a>
+
+
+
+                <button id="closeHubModal">
+
+                    ✕
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CONTENT -->
+
+        <iframe
+        id="hubFrame"
+        src="">
+        </iframe>
+
+    </div>
+
+</div>
+
+<script>
+
+const hubToggle =
+document.getElementById("hubToggle");
+
+const hubMenu =
+document.getElementById("hubMenu");
+
+
+
+/* TOGGLE MENU */
+
+hubToggle.onclick = () => {
+
+    hubMenu.classList.toggle("active");
+
+};
+
+
+
+/* MODAL */
+
+const modal =
+document.getElementById("hubModal");
+
+const frame =
+document.getElementById("hubFrame");
+
+const modalTitle =
+document.getElementById("hubModalTitle");
+
+const fullPage =
+document.getElementById("hubFullPage");
+
+
+
+/* OPEN MODAL */
+
+document
+.querySelectorAll(".open-hub-page")
+
+.forEach(button => {
+
+    button.onclick = () => {
+
+        const page =
+        button.dataset.page;
+
+        const title =
+        button.dataset.title;
+
+        frame.src = page;
+
+        modalTitle.innerText = title;
+
+        if(page=="changelog-modal.php"){
+
+    fullPage.href="changelog.php";
+
+}
+else if(page=="roadmap-modal.php"){
+
+    fullPage.href="roadmap.php";
+
+}
+else{
+
+    fullPage.href=page;
+
+}
+
+        modal.classList.add("active");
+
+    };
+
+});
+
+
+
+/* CLOSE MODAL */
+
+document
+.getElementById("closeHubModal")
+
+.onclick = () => {
+
+    modal.classList.remove("active");
+
+    frame.src = "";
+
+};
+
+</script>
+
 
 </body>
 <?php
@@ -923,7 +1611,7 @@ LIMIT 6"
 
     <div class="section-title">
 
-        🔥 RECENT RESULTS
+        RECENT RESULTS
 
     </div>
 
@@ -1307,7 +1995,7 @@ LIMIT 5"
 
     <div class="section-title">
 
-        🏆 TOP LEADERBOARD
+        TOP LEADERBOARD
 
     </div>
 
@@ -1628,6 +2316,9 @@ LIMIT 6"
 
 ?>
 
+<!-- BEST WIN PERCENTAGE -->
+
+<?php include 'top-players.php'; ?>
 
 
 <!-- FIXTURES PREVIEW -->
@@ -1636,7 +2327,7 @@ LIMIT 6"
 
     <div class="section-title">
 
-        ⚔️ UPCOMING FIXTURES
+        UPCOMING FIXTURES
 
     </div>
 
@@ -1703,7 +2394,7 @@ LIMIT 6"
 
             <div class="fixture-status">
 
-                ⏳ Match Pending
+                 Match Pending
 
             </div>
 
@@ -1958,7 +2649,7 @@ LIMIT 4"
 
     <div class="section-title">
 
-        🏆 PLAYOFF BATTLES
+        PLAYOFF BATTLES
 
     </div>
 

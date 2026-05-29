@@ -19,6 +19,7 @@ if(isset($_POST['submit_result'])){
 
     home_score='$home_score',
     away_score='$away_score',
+    mvp_player_id = '".$_POST['mvp_player_id']."',
     match_status='completed'
 
     WHERE id='$fixture_id'
@@ -26,7 +27,45 @@ if(isset($_POST['submit_result'])){
     ");
 
 
+/* SAVE CURRENT POSITIONS */
 
+$position = 1;
+
+
+
+$currentStandings = mysqli_query($conn,
+
+"SELECT id
+
+FROM standings
+
+ORDER BY
+
+points DESC,
+goal_difference DESC,
+goals_for DESC"
+
+);
+
+
+
+while($standing = mysqli_fetch_assoc($currentStandings)){
+
+    mysqli_query($conn,
+
+    "UPDATE standings
+
+    SET previous_position='$position'
+
+    WHERE id='".$standing['id']."'"
+
+    );
+
+
+
+    $position++;
+
+}
 
     // RESET STANDINGS
 
@@ -44,7 +83,6 @@ if(isset($_POST['submit_result'])){
     points = 0
 
     ");
-
 
 
 
@@ -307,6 +345,120 @@ if(isset($_POST['submit_result'])){
             font-weight:bold;
         }
 
+       /* MVP BOX */
+
+.mvp-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+/* LABEL */
+
+.mvp-label{
+
+    font-size:18px;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+
+
+/* SELECT */
+
+.mvp-select{
+
+    width:170px;
+
+    padding:10px 14px;
+
+    border-radius:12px;
+
+    border:
+    1px solid rgba(255,153,0,0.25);
+
+    background:
+    rgba(20,20,20,0.95);
+
+    color:white;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    outline:none;
+
+    transition:0.3s;
+
+}
+
+
+
+.mvp-select:focus{
+
+    border-color:#ff9900;
+
+    box-shadow:
+    0 0 14px rgba(255,153,0,0.25);
+
+}
+
+
+
+/* BUTTON */
+
+.mvp-submit{
+
+    padding:12px 26px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff9900,
+    #ffb300
+    );
+
+    color:#000;
+
+    font-weight:800;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 0 20px rgba(255,153,0,0.25);
+
+}
+
+
+
+.mvp-submit:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 28px rgba(255,153,0,0.45);
+
+}
+
     </style>
 
 </head>
@@ -443,6 +595,55 @@ if(isset($_POST['submit_result'])){
 
                     <td>
 
+<div class="mvp-box">
+
+<div class="mvp-label">
+
+🏆 Match MVP
+
+</div>
+
+<select name="mvp_player_id"
+class="mvp-select"
+required>
+
+<option value="">
+Select MVP
+</option>
+
+<?php
+
+$players =
+mysqli_query($conn,
+"SELECT * FROM players ORDER BY player_name ASC");
+
+while($player = mysqli_fetch_assoc($players)){
+
+?>
+
+<option value="<?php
+echo $player['id'];
+?>">
+
+<?php
+echo $player['player_name'];
+?>
+
+</option>
+
+<?php } ?>
+
+</select>
+
+<button type="submit"
+class="mvp-submit">
+
+Save MVP
+
+</button>
+
+</div>
+
                         <button type="submit"
                                 name="submit_result"
                                 class="submit-btn">
@@ -454,6 +655,8 @@ if(isset($_POST['submit_result'])){
                         </form>
 
                     </td>
+			
+
 
                     <?php } ?>
 

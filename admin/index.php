@@ -225,6 +225,83 @@ $top_conceded = mysqli_fetch_assoc($top_conceded_query);
             font-weight:bold;
         }
 
+.quick-actions-section{
+
+    margin-top:40px;
+
+}
+
+.quick-actions-section h2{
+
+    color:#ff9900;
+
+    margin-bottom:20px;
+
+    font-family:'Orbitron',sans-serif;
+
+}
+
+.quick-actions-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+}
+
+.quick-action-card{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    rgba(255,255,255,.03);
+
+    border:
+    1px solid rgba(255,153,0,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    font-size:30px;
+
+}
+
+.quick-action-card span{
+
+    font-size:14px;
+
+    font-weight:700;
+
+}
+
+.quick-action-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:
+    rgba(255,153,0,.35);
+
+    box-shadow:
+    0 0 25px rgba(255,153,0,.15);
+
+}
+
     </style>
 
 </head>
@@ -538,6 +615,46 @@ $top_conceded = mysqli_fetch_assoc($top_conceded_query);
             </div>
 
         </div>
+
+    </div>
+
+</div>
+
+<div class="quick-actions-section">
+
+    <h2>Quick Actions</h2>
+
+    <div class="quick-actions-grid">
+
+        <a href="news.php" class="quick-action-card">
+            📰
+            <span>News Panel</span>
+        </a>
+
+        <a href="changelog.php" class="quick-action-card">
+            📜
+            <span>Changelog</span>
+        </a>
+
+        <a href="roadmap.php" class="quick-action-card">
+            🛣
+            <span>Roadmap</span>
+        </a>
+
+        <a href="fixtures.php" class="quick-action-card">
+            ⚽
+            <span>Fixtures</span>
+        </a>
+
+        <a href="players.php" class="quick-action-card">
+            👥
+            <span>Players</span>
+        </a>
+
+        <a href="standings.php" class="quick-action-card">
+            🏆
+            <span>Standings</span>
+        </a>
 
     </div>
 
