@@ -14,103 +14,148 @@ rel="stylesheet">
 
 <div class="navbar">
 
-    <!-- LOGO -->
+    <div class="logo-section">
 
-    <div class="logo">
+        <div class="logo-icon">
+    <img src="assets/images/coe-hub.png" alt="COE Logo">
+</div>
 
-        <span class="logo-icon">
-            🏆
-        </span>
+        <div class="logo-info">
 
-        <span class="logo-text">
+            <div class="logo-text">
+                COE
+            </div>
 
-            COE
+            <div class="logo-subtitle">
+                Champions of eFootball
+            </div>
 
-        </span>
+        </div>
 
     </div>
 
-
-
-    <!-- DESKTOP NAV -->
-
-    <div class="nav-links">
+    <div class="nav-center">
 
         <a href="index.php">HOME</a>
 
-        <a href="standings.php">STANDINGS</a>
+        <div class="dropdown">
 
-        <a href="fixtures.php">FIXTURES</a>
+            <button class="dropdown-btn">
 
-        <a href="results.php">RESULTS</a>
+                TOURNAMENT
 
-        <a href="stats.php">STATS</a>
+                <span>▼</span>
 
-        <a href="playoffs.php">PLAYOFFS</a>
+            </button>
 
-    </div>
+            <div class="dropdown-menu">
 
+                <a href="standings.php">
+                    Standings
+                </a>
 
+                <a href="fixtures.php">
+                    Fixtures
+                </a>
 
-    <!-- DESKTOP LOGIN -->
+                <a href="results.php">
+                    Results
+                </a>
 
-    <div class="desktop-login">
+            </div>
 
-        <a href="login.php"
-           class="login-btn">
+        </div>
 
-           Admin Login
+        <a href="stats.php">
+            STATS
+        </a>
 
+        <a href="playoffs.php">
+            PLAYOFFS
         </a>
 
     </div>
 
+    <div class="nav-right">
 
+        <div class="season-live">
 
-    <!-- MOBILE TOGGLE -->
+            ⚡ SEASON 1 LIVE
 
-    <div class="menu-toggle"
-         onclick="toggleMenu()">
+        </div>
 
-         ☰
+        <a href="login.php"
+           class="admin-btn">
+
+            ADMIN
+
+        </a>
+
+        <div class="menu-toggle"
+             onclick="toggleMenu()">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
 
     </div>
 
 </div>
 
-
-
-<!-- OVERLAY -->
-
 <div class="menu-overlay"
      id="menuOverlay"
      onclick="toggleMenu()">
-
 </div>
-
-
-
-<!-- MOBILE MENU -->
 
 <div class="mobile-menu"
      id="mobileMenu">
 
+<div class="mobile-header">
+
+    🏆 COE
+
+    <div class="mobile-season">
+        ⚡ SEASON 1 LIVE
+    </div>
+
+</div>
+
     <a href="index.php">HOME</a>
 
-    <a href="standings.php">STANDINGS</a>
+    <details>
 
-    <a href="fixtures.php">FIXTURES</a>
+        <summary>
+            TOURNAMENT
+        </summary>
 
-    <a href="results.php">RESULTS</a>
+        <a href="standings.php">
+            Standings
+        </a>
 
-    <a href="stats.php">STATS</a>
+        <a href="fixtures.php">
+            Fixtures
+        </a>
 
-    <a href="playoffs.php">PLAYOFFS</a>
+        <a href="results.php">
+            Results
+        </a>
+
+    </details>
+
+    <a href="stats.php">
+        STATS
+    </a>
+
+    <a href="playoffs.php">
+        PLAYOFFS
+    </a>
 
     <a href="login.php"
        class="mobile-login">
 
-        Admin Login
+        ADMIN LOGIN
 
     </a>
 
@@ -120,228 +165,460 @@ rel="stylesheet">
 
 <style>
 
+/* ====================================
+   COE NAVBAR V2 - SEASON 1
+==================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Exo 2',sans-serif;
 }
-
-body{
-
-    font-family:'Exo 2',sans-serif;
-
-}
-
-
-
-/* TITLES */
-
-h1,h2,h3,h4,h5,h6,
-.logo,
-.hero-title,
-.section-title{
-
-    font-family:'Orbitron',sans-serif;
-
-}
-
-/* NAVBAR */
 
 .navbar{
 
-    width:100%;
-    
-    max-width:100vw;
+    position:sticky;
+    top:0;
+    z-index:9999;
 
-    height:85px;
-
-    padding:0 50px;
+    height:90px;
 
     display:flex;
-
+    align-items:center;
     justify-content:space-between;
 
-    align-items:center;
+    padding:0 40px;
 
-    position:sticky;
+    background:rgba(8,8,8,.88);
 
-    top:0;
+    backdrop-filter:blur(18px);
 
-    z-index:1000;
+    border-bottom:1px solid rgba(255,153,0,.12);
 
-    background:
-    rgba(10,10,10,0.88);
-
-    backdrop-filter:blur(14px);
-
-    border-bottom:
-    1px solid rgba(255,153,0,0.12);
+    overflow:visible;
 
 }
 
+/* ENERGY BEAM */
 
-
-/* LOGO */
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-}
-
-.logo-icon{
-
-    font-size:34px;
-
-    color:#ff9900;
-
-    text-shadow:
-    0 0 15px #ff9900;
-
-}
-
-.logo-text{
-
-    font-size:30px;
-
-    font-weight:bold;
-
-    color:white;
-
-    letter-spacing:2px;
-
-}
-
-
-
-/* DESKTOP LINKS */
-
-.nav-links{
-
-    display:flex;
-
-    gap:35px;
-
-}
-
-.nav-links a{
-
-    text-decoration:none;
-
-    color:#ddd;
-
-    font-weight:bold;
-
-    transition:0.3s;
-
-    position:relative;
-
-}
-
-
-
-/* HOVER */
-
-.nav-links a:hover{
-
-    color:#ff9900;
-
-    text-shadow:
-    0 0 10px #ff9900;
-
-}
-
-
-
-/* UNDERLINE */
-
-.nav-links a::after{
+.navbar::before{
 
     content:"";
 
     position:absolute;
 
-    width:0;
+    top:0;
+    left:-100%;
 
+    width:200%;
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #ff9900,
+        transparent
+    );
+
+    animation:navBeam 6s linear infinite;
+
+}
+
+@keyframes navBeam{
+
+    100%{
+        left:100%;
+    }
+
+}
+
+/* LOGO */
+
+.logo-section{
+
+    display:flex;
+    align-items:center;
+
+}
+
+.logo-icon{
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.logo-icon img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255,153,0,.5))
+        drop-shadow(0 0 20px rgba(255,153,0,.3));
+
+    transition:.4s ease;
+
+}
+
+.logo-icon img:hover{
+
+    transform:scale(1.08);
+
+    filter:
+        drop-shadow(0 0 15px rgba(255,153,0,.8))
+        drop-shadow(0 0 35px rgba(255,153,0,.5));
+
+}
+
+
+.logo-info{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.logo-text{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:28px;
+
+    font-weight:800;
+
+    color:white;
+
+    line-height:1;
+
+}
+
+.logo-subtitle{
+
+    font-size:11px;
+
+    color:#888;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+/* CENTER NAV */
+
+.nav-center{
+
+    display:flex;
+    align-items:center;
+    gap:35px;
+
+}
+
+.nav-center a,
+.dropdown-btn{
+
+    position:relative;
+
+    background:none;
+    border:none;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.nav-center a:hover,
+.dropdown-btn:hover{
+
+    color:#ff9900;
+
+}
+
+.nav-center a::after,
+.dropdown-btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:-10px;
+
+    width:0;
     height:2px;
 
     background:#ff9900;
 
-    left:0;
-
-    bottom:-6px;
-
-    transition:0.3s;
+    transition:.3s;
 
 }
 
-.nav-links a:hover::after{
+.nav-center a:hover::after,
+.dropdown-btn:hover::after{
 
     width:100%;
 
 }
 
+/* DROPDOWN */
 
+.dropdown{
+    position:relative;
+    display:flex;
+    align-items:center;
+}
 
-/* LOGIN BUTTON */
+.dropdown-menu{
 
-.login-btn{
+    position:absolute;
 
-    background:
-    linear-gradient(
-        135deg,
-        #ff9900,
-        #ff6600
-    );
+    top:55px;
+    left:0;
 
-    color:black;
+    min-width:220px;
 
-    padding:12px 22px;
+    background:rgba(12,12,12,.98);
 
-    border-radius:12px;
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,153,0,.15);
+
+    border-radius:18px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:.35s;
+
+    overflow:hidden;
+
+    z-index:99999;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.5);
+
+}
+
+.dropdown:hover .dropdown-menu{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.dropdown-menu a{
+
+    display:block;
+
+    padding:16px 20px;
+
+    color:white;
 
     text-decoration:none;
 
-    font-weight:bold;
-
-    box-shadow:
-    0 0 15px rgba(255,153,0,0.4);
-
-    transition:0.3s;
+    transition:.25s;
 
 }
 
-.login-btn:hover{
+.dropdown-menu a:hover{
 
-    transform:translateY(-2px);
+    background:
+    rgba(255,153,0,.08);
 
-    box-shadow:
-    0 0 25px rgba(255,153,0,0.8);
+    color:#ff9900;
+
+    padding-left:28px;
 
 }
 
+/* RIGHT */
 
+.nav-right{
 
-/* MOBILE TOGGLE */
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+/* LIVE BADGE */
+
+.season-live{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,153,0,.08);
+
+    border:
+    1px solid rgba(255,153,0,.15);
+
+    color:#ff9900;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    animation:livePulse 2.5s infinite;
+
+}
+
+.season-live::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.15),
+    transparent
+    );
+
+    animation:liveShine 4s infinite;
+
+}
+
+@keyframes liveShine{
+
+    100%{
+        left:100%;
+    }
+
+}
+
+@keyframes livePulse{
+
+    0%,100%{
+
+        box-shadow:
+        0 0 10px rgba(255,153,0,.2);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 25px rgba(255,153,0,.45);
+
+    }
+
+}
+
+/* ADMIN BUTTON */
+
+.admin-btn{
+
+    text-decoration:none;
+
+    padding:12px 22px;
+
+    border-radius:14px;
+
+    color:black;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff9900,
+    #ff6600);
+
+    transition:.35s;
+
+    box-shadow:
+    0 0 15px rgba(255,153,0,.25);
+
+}
+
+.admin-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 30px rgba(255,153,0,.55);
+
+}
+
+/* HAMBURGER */
 
 .menu-toggle{
 
     display:none;
 
-    font-size:34px;
-
-    color:#ff9900;
+    width:50px;
+    height:50px;
 
     cursor:pointer;
 
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    gap:6px;
+
 }
 
+.menu-toggle span{
 
+    width:28px;
+    height:3px;
+
+    background:#ff9900;
+
+    border-radius:20px;
+
+    transition:.35s;
+
+}
+
+.menu-toggle.active span:nth-child(1){
+    transform:translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform:translateY(-9px) rotate(-45deg);
+}
 
 /* OVERLAY */
 
@@ -349,42 +626,28 @@ h1,h2,h3,h4,h5,h6,
 
     position:fixed;
 
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100vh;
+    inset:0;
 
     background:
-    rgba(0,0,0,0.55);
+    rgba(0,0,0,.7);
 
-    backdrop-filter:blur(4px);
+    backdrop-filter:blur(8px);
 
     opacity:0;
-
     visibility:hidden;
 
-    transition:0.3s;
+    transition:.35s;
 
-    z-index:1500;
+    z-index:9500;
 
 }
-
-
-
-/* ACTIVE OVERLAY */
 
 .menu-overlay.active{
 
     opacity:1;
-
     visibility:visible;
 
 }
-
-
 
 /* MOBILE MENU */
 
@@ -393,90 +656,85 @@ h1,h2,h3,h4,h5,h6,
     position:fixed;
 
     top:0;
-
-    right:-100%;
-
-    width:320px;
-
-    max-width:85%;
-
-    height:100vh;
-    
-    overflow-y:auto;
-
-    background:
-    rgba(8,8,8,0.98);
-
-    backdrop-filter:blur(18px);
-
-    display:flex;
-
-    flex-direction:column;
-
-    padding:120px 25px 40px;
-
-    gap:18px;
-
-    transition:0.35s ease;
-
-    z-index:2000;
-
-    border-left:
-    1px solid rgba(255,153,0,0.18);
-
-    box-shadow:
-    -10px 0 40px rgba(0,0,0,0.6);
-
-}
-
-
-
-/* ACTIVE */
-
-.mobile-menu.active{
-
-    right:0;
-
-}
-
-
-
-/* LINKS */
-
-.mobile-menu a{
+    right:-110%;
 
     width:100%;
 
-    padding:18px 20px;
+    max-width:420px;
 
-    border-radius:16px;
+    height:100dvh;
 
     background:
-    rgba(255,255,255,0.03);
+    linear-gradient(
+        180deg,
+        #0a0a0a,
+        #050505
+    );
 
-    color:white;
+    padding:90px 20px 30px;
 
-    text-decoration:none;
+    overflow-y:auto;
 
-    font-size:20px;
+    transition:.4s ease;
 
-    font-weight:bold;
+    z-index:99999;
 
-    transition:0.3s;
+    display:flex;
+    flex-direction:column;
 
-    border:
-    1px solid rgba(255,153,0,0.05);
+    gap:14px;
+
+    box-shadow:
+    -20px 0 50px rgba(0,0,0,.7);
+}
+
+.mobile-menu.active{
+    right:0;
+}
+
+.mobile-header{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:28px;
+
+    color:#ff9900;
+
+    text-align:center;
+
+    margin-bottom:20px;
 
 }
 
+.mobile-menu a{
 
+    display:flex;
 
-/* HOVER */
+    align-items:center;
 
-.mobile-menu a:hover{
+    width:100%;
+
+    min-height:60px;
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:700;
 
     background:
-    rgba(255,153,0,0.1);
+    rgba(255,255,255,.03);
+
+    border:
+    1px solid rgba(255,255,255,.04);
+
+}
+
+.mobile-menu a:hover{
 
     color:#ff9900;
 
@@ -484,13 +742,68 @@ h1,h2,h3,h4,h5,h6,
 
 }
 
+.mobile-header{
 
+    font-size:32px;
 
-/* MOBILE LOGIN */
+    font-weight:800;
+
+    color:#ff9900;
+
+    margin-bottom:15px;
+
+    text-align:center;
+
+}
+
+.mobile-menu details{
+
+    background:
+    rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.04);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+}
+
+.mobile-menu summary{
+
+    min-height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:18px 20px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.mobile-menu details a{
+
+    margin:8px;
+
+}
 
 .mobile-login{
 
-    margin-top:10px;
+    display:flex !important;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    min-height:60px;
 
     background:
     linear-gradient(
@@ -501,64 +814,109 @@ h1,h2,h3,h4,h5,h6,
 
     color:black !important;
 
-    text-align:center;
-
-    box-shadow:
-    0 0 20px rgba(255,153,0,0.4);
+    font-weight:800;
 
 }
 
+html,
+body{
+    overflow-x:hidden;
+}
 
+.mobile-menu a,
+.mobile-menu details{
+
+    opacity:0;
+    transform:translateX(30px);
+
+}
+
+.mobile-menu.active a,
+.mobile-menu.active details{
+
+    opacity:1;
+    transform:none;
+
+    transition:.4s;
+}
+
+.mobile-menu.active a:nth-child(2){
+    transition-delay:.1s;
+}
+
+.mobile-menu.active details{
+    transition-delay:.2s;
+}
+
+.mobile-menu.active a:nth-child(4){
+    transition-delay:.3s;
+}
+
+.mobile-menu.active a:nth-child(5){
+    transition-delay:.4s;
+}
+
+.mobile-menu.active .mobile-login{
+    transition-delay:.5s;
+}
+
+.mobile-season{
+
+    margin-top:10px;
+
+    color:#ff9900;
+
+    font-size:13px;
+
+    opacity:.8;
+
+}
 
 /* MOBILE */
 
-@media(max-width:900px){
+@media(max-width:1024px){
 
-    .nav-links{
-
+    .nav-center{
         display:none;
-
     }
 
-    .desktop-login{
-
+    .season-live{
         display:none;
-
     }
 
     .menu-toggle{
+        display:flex;
+    }
 
-        display:block;
-
+    .logo-subtitle{
+        display:none;
     }
 
     .navbar{
+        padding:0 20px;
+        height:80px;
+    }
 
-        padding:0 25px;
-
+    .logo-text{
+        font-size:22px;
     }
 
 }
 
+/* SMALL MOBILE */
 
+@media(max-width:600px){
 
-/* DESKTOP */
-
-@media(min-width:901px){
+    .admin-btn{
+        display:none;
+    }
 
     .mobile-menu{
-
-        display:none;
-
-    }
-
-    .menu-overlay{
-
-        display:none;
-
+        width:100%;
     }
 
 }
+
 
 </style>
 
@@ -573,9 +931,13 @@ function toggleMenu(){
     .classList
     .toggle("active");
 
-
     document
     .getElementById("menuOverlay")
+    .classList
+    .toggle("active");
+
+    document
+    .querySelector(".menu-toggle")
     .classList
     .toggle("active");
 

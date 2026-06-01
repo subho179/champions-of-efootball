@@ -175,11 +175,11 @@ body{
 
 .register-container{
 
-    width:100%;
+    width:calc(100% - 40px);
 
     max-width:520px;
 
-    margin:80px auto;
+    margin:100px auto 60px;
 
     padding:45px;
 
@@ -425,9 +425,35 @@ body{
 
     .register-container{
 
-        margin:40px 20px;
+        width:calc(100% - 24px);
 
-        padding:35px 25px;
+        max-width:none;
+
+        margin:30px auto;
+
+        padding:28px 18px;
+
+        border-radius:22px;
+
+    }
+
+    .closed-box{
+
+        padding:40px 10px;
+
+    }
+
+    .closed-box h2{
+
+        font-size:28px;
+
+    }
+
+    .closed-box p{
+
+        font-size:15px;
+
+        line-height:1.6;
 
     }
 

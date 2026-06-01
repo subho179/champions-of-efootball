@@ -23,7 +23,10 @@ FROM standings
 JOIN players
 ON standings.player_id = players.id
 
-ORDER BY standings.points DESC
+ORDER BY
+standings.points DESC,
+standings.goal_difference DESC,
+standings.goals_for DESC
 
 LIMIT 3"
 

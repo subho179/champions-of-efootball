@@ -47,368 +47,706 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 
 
-        /* HERO */
+/* HERO */
 
-        .hero{
+.hero{
 
-            min-height:100vh;
+    min-height:100vh;
 
-            display:flex;
+    display:flex;
 
-            justify-content:center;
+    justify-content:center;
 
-            align-items:center;
+    align-items:center;
 
-            text-align:center;
+    text-align:center;
 
-            padding:40px;
+    padding:120px 25px 80px;
 
-            position:relative;
-			
-            width:100%;
-            
-			max-width:100%;
-            
-			overflow:hidden;
-        }
+    position:relative;
 
+    overflow:hidden;
 
+}
 
-        /* GLOW EFFECT */
+/* MAIN GLOW */
 
-        .hero::before{
+.hero::before{
 
-            content:"";
+    content:"";
 
-            position:absolute;
+    position:absolute;
 
-            width:500px;
+    width:700px;
 
-            height:500px;
+    height:700px;
 
-            background:#ff9900;
+    background:#ff9900;
 
-            filter:blur(180px);
+    filter:blur(220px);
 
-            opacity:0.15;
+    opacity:.12;
 
-            border-radius:50%;
+    border-radius:50%;
 
-            top:10%;
+    left:50%;
 
-            z-index:-1;
+    top:-150px;
 
-        }
+    transform:translateX(-50%);
 
+    animation:arenaGlow 6s ease-in-out infinite;
 
+}
 
-        .hero-content{
+@keyframes arenaGlow{
 
-            max-width:950px;
+    0%,100%{
 
-        }
+        opacity:.10;
 
+        transform:
+        translateX(-50%)
+        scale(1);
 
+    }
 
-        /* TITLE */
+    50%{
 
-        .hero h1{
+        opacity:.18;
 
-            font-size:90px;
+        transform:
+        translateX(-50%)
+        scale(1.12);
 
-            line-height:1.1;
+    }
 
-            margin-bottom:25px;
+}
 
-            text-transform:uppercase;
+/* CONTENT */
 
-            letter-spacing:3px;
-	    
-	    font-family:'Orbitron',sans-serif;
-        }
+.hero-content{
 
-
-
-        .hero h1 span{
-
-            color:#ff9900;
-
-            text-shadow:
-            0 0 15px #ff9900,
-            0 0 35px #ff6600;
-
-        }
-
-
-
-        /* SUBTITLE */
-
-        .hero p{
-
-            font-size:24px;
-
-            color:#bdbdbd;
-
-            line-height:1.7;
-
-            margin-bottom:40px;
-
-        }
-
-
-
-        /* BUTTONS */
-
-        .hero-buttons{
-
-            display:flex;
-
-            justify-content:center;
-
-            gap:25px;
-
-            flex-wrap:wrap;
-
-        }
-
-
-
-        .btn-primary{
-
-            background:
-            linear-gradient(
-                135deg,
-                #ff9900,
-                #ff6600
-            );
-
-            color:black;
-
-            padding:18px 34px;
-
-            border-radius:14px;
-
-            text-decoration:none;
-
-            font-weight:bold;
-
-            font-size:18px;
-
-            transition:0.3s;
-
-            box-shadow:
-            0 0 20px rgba(255,153,0,0.45);
-
-        }
-
-
-
-        .btn-primary:hover{
-
-            transform:translateY(-4px);
-
-            box-shadow:
-            0 0 35px rgba(255,153,0,0.9);
-
-        }
-
-
-
-        .btn-secondary{
-
-            border:2px solid #ff9900;
-
-            color:#ff9900;
-
-            padding:18px 34px;
-
-            border-radius:14px;
-
-            text-decoration:none;
-
-            font-weight:bold;
-
-            font-size:18px;
-
-            transition:0.3s;
-
-        }
-
-
-
-        .btn-secondary:hover{
-
-            background:#ff9900;
-
-            color:black;
-
-            box-shadow:
-            0 0 30px rgba(255,153,0,0.8);
-
-        }
-
-
-
-        /* LIVE TAG */
-
-        .live-badge{
-
-            display:inline-block;
-
-            background:rgba(255,153,0,0.15);
-
-            border:1px solid rgba(255,153,0,0.4);
-
-            color:#ff9900;
-
-            padding:12px 22px;
-
-            border-radius:40px;
-
-            margin-bottom:25px;
-
-            font-weight:bold;
-
-            backdrop-filter:blur(10px);
-
-        }
-
-
-
-        /* MOBILE */
-
-        @media(max-width:900px){
-
-            .hero h1{
-
-                font-size:55px;
-
-            }
-
-            .hero p{
-
-                font-size:19px;
-
-            }
-
-        }
-        /* GLOBAL MOBILE FIX */
-
-html,
-body{
+    max-width:1100px;
 
     width:100%;
 
-    overflow-x:hidden;
+    z-index:2;
 
 }
 
+/* BADGE */
 
+.live-badge{
 
-*{
+    display:inline-block;
 
-    max-width:100%;
+    padding:12px 24px;
+
+    border-radius:999px;
+
+    background:rgba(255,153,0,0.12);
+
+    border:1px solid rgba(255,153,0,0.25);
+
+    color:#ff9900;
+
+    font-weight:700;
+
+    margin-bottom:30px;
+
+    backdrop-filter:blur(10px);
 
 }
 
-/* HERO BUTTONS */
+/* TITLE */
+
+.hero-title{
+
+    font-size:82px;
+
+    line-height:1;
+
+    text-transform:uppercase;
+
+    font-family:'Orbitron',sans-serif;
+
+    margin-bottom:30px;
+
+    letter-spacing:2px;
+
+}
+
+.hero-title{
+
+    animation:
+    titleReveal 1s ease forwards;
+
+}
+
+@keyframes titleReveal{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+.hero-title span{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero-title span{
+
+    display:inline;
+
+    color:#ff9900;
+
+    background:none !important;
+
+    box-shadow:none !important;
+
+    text-shadow:
+    0 0 10px rgba(255,153,0,.8),
+    0 0 20px rgba(255,153,0,.8),
+    0 0 40px rgba(255,102,0,.6),
+    0 0 80px rgba(255,102,0,.4);
+
+    animation:orangePulse 3s ease-in-out infinite;
+
+}
+
+@keyframes orangePulse{
+
+    0%,100%{
+
+        text-shadow:
+        0 0 15px #ff9900,
+        0 0 35px #ff6600,
+        0 0 60px rgba(255,153,0,.5);
+
+    }
+
+    50%{
+
+        text-shadow:
+        0 0 25px #ff9900,
+        0 0 55px #ff6600,
+        0 0 100px rgba(255,153,0,.8);
+
+    }
+
+}
+
+.hero-title{
+
+    position:relative;
+    z-index:2;
+
+}
+
+.hero-content{
+
+    position:relative;
+    z-index:2;
+
+}
+
+.hero-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:55%;
+
+    width:500px;
+    height:150px;
+
+    transform:translate(-50%,-50%);
+
+    background:radial-gradient(
+        ellipse,
+        rgba(255,153,0,.18) 0%,
+        rgba(255,153,0,.08) 40%,
+        transparent 80%
+    );
+
+    filter:blur(50px);
+
+    z-index:-1;
+
+    animation:titleSpotlight 4s ease-in-out infinite;
+
+}
+
+@keyframes titleSpotlight{
+
+    0%,100%{
+
+        opacity:.6;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+}
+
+/* SUBTITLE */
+
+.hero-subtitle{
+
+    max-width:750px;
+
+    margin:0 auto;
+
+    font-size:21px;
+
+    color:#bdbdbd;
+
+    line-height:1.8;
+
+}
+
+/* STATS */
+
+.hero-stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin:45px 0;
+
+}
+
+.hero-stat{
+
+    padding:12px 18px;
+
+    font-size:15px;
+
+    border-radius:16px;
+
+    background:rgba(255,153,0,0.08);
+
+    border:1px solid rgba(255,153,0,0.15);
+
+    backdrop-filter:blur(10px);
+
+    font-weight:700;
+
+}
+
+.hero-stat{
+
+    transition:.35s;
+
+}
+
+.hero-stat:hover{
+
+    transform:
+    translateY(-6px);
+
+    border-color:
+    rgba(255,153,0,.4);
+
+    box-shadow:
+    0 0 25px rgba(255,153,0,.18);
+
+}
+
+/* BUTTONS */
 
 .hero-buttons{
 
     display:flex;
 
-    gap:25px;
-
     justify-content:center;
 
-    flex-wrap:wrap;
+    gap:20px;
 
-    margin-top:50px;
+    flex-wrap:wrap;
+    align-items:center;
 
 }
 
-
-
-/* BUTTON */
+.hero-btn{
+    min-width:240px;
+    max-width:320px;
+    width:auto;
+    text-align:center;
+    flex:0 0 auto;
+}
 
 .hero-btn{
 
-    display:inline-block;
-
-    padding:18px 38px;
+    padding:18px 34px;
 
     border-radius:18px;
 
     text-decoration:none;
 
-    font-size:22px;
-
     font-weight:bold;
 
-    transition:0.3s;
+    font-size:18px;
+
+    transition:.3s;
 
 }
 
-
-
-/* PRIMARY */
-
 .hero-btn-primary{
 
-    background:
-    linear-gradient(
+    background:linear-gradient(
     135deg,
     #ff9900,
-    #ff6600
-    );
+    #ff6600);
 
     color:black;
 
     box-shadow:
-    0 0 30px rgba(255,153,0,0.45);
+    0 0 30px rgba(255,153,0,0.4);
 
 }
-
-
-
-/* SECONDARY */
 
 .hero-btn-secondary{
 
-    border:
-    2px solid #ff9900;
+    border:2px solid #ff9900;
 
     color:#ff9900;
 
-    background:transparent;
-
 }
-
-
-
-/* HOVER */
 
 .hero-btn:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 
 }
 
+.hero-btn{
 
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.25),
+    transparent
+    );
+
+    transition:.6s;
+
+}
+
+.hero-btn:hover::before{
+
+    left:100%;
+
+}
+
+.scroll-indicator{
+
+    margin-top:60px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.scroll-line{
+
+    width:2px;
+
+    height:45px;
+
+    background:linear-gradient(
+        to bottom,
+        #ff9900,
+        transparent
+    );
+
+}
+
+.scroll-indicator i{
+
+    color:#ff9900;
+
+    font-size:24px;
+
+    animation:bounceArrow 2s infinite;
+
+    text-shadow:
+    0 0 15px rgba(255,153,0,.8);
+
+}
+
+@keyframes bounceArrow{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(10px);
+
+    }
+
+}
+
+.hero-highlights{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin:35px 0;
+
+}
+
+.hero-highlights span{
+
+    padding:10px 16px;
+
+    background:rgba(255,153,0,.08);
+
+    border:1px solid rgba(255,153,0,.15);
+
+    border-radius:999px;
+
+    font-size:14px;
+
+    color:#ddd;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        rgba(255,153,0,.08),
+        transparent 70%
+    );
+
+    animation:heroPulse 6s ease-in-out infinite;
+
+}
+
+@keyframes heroPulse{
+
+    0%,100%{
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+}
 
 /* MOBILE */
 
 @media(max-width:768px){
 
-    .hero-btn{
+    .hero{
 
-        width:100%;
+        min-height:85vh;
+
+        padding:100px 20px 60px;
+
+    }
+
+    .hero-title{
+
+        font-size:48px;
+
+    }
+
+    .hero-subtitle{
+
+        font-size:16px;
+
+    }
+
+    .hero-stats{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+    margin:35px 0;
+
+}
+
+/* mobile hero fix */
+.hero-stats{
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+
+        gap:12px;
+
+        margin:30px 0;
+
+    }
+
+    .hero-stat{
+
+        width:auto;
+
+        padding:12px 10px;
+
+        font-size:13px;
+
+        border-radius:14px;
 
         text-align:center;
 
-        font-size:20px;
+    }
+
+}	
+
+  .hero-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.hero-btn{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    font-size:18px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+    .coe-hub{
+
+        bottom:15px;
+
+        right:15px;
 
     }
+
+    .hub-toggle{
+
+        width:58px;
+
+        height:58px;
+
+    }
+
+}
+
+.hero{
+
+    min-height:90vh;
+
+    padding:90px 20px 40px;
+
+}
+
+.hero-title{
+
+    font-size:42px;
+
+    line-height:1;
+
+    margin-bottom:20px;
+
+}
+
+.hero-subtitle{
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
 
 }
 
@@ -420,136 +758,660 @@ body{
 
 <?php include 'includes/public-navbar.php'; ?>
 
-
-
 <!-- HERO SECTION -->
 
 <section class="hero">
 
     <div class="hero-content">
 
-
-        <!-- LIVE BADGE -->
-
         <div class="live-badge">
-
             ⚡ INDIA'S FUTURE OF eFOOTBALL ESPORTS
-
         </div>
 
-
-
-        <!-- TITLE -->
-
-        <h1>
-
+        <h1 class="hero-title">
             CHAMPIONS OF
-
-            <span>
-
-                eFOOTBALL
-
-            </span>
-
+            <span>eFOOTBALL</span>
         </h1>
 
-
-
-        <!-- SUBTITLE -->
-
-        <p>
-
-            India’s futuristic competitive
-            eFootball league platform featuring
-            dynamic leagues, live standings,
-            BO3 playoffs, advanced stats,
-            and elite esports competition.
-
+        <p class="hero-subtitle">
+            India's premier competitive eFootball platform featuring
+            elite leagues, MVP awards, advanced player rankings,
+            live standings and championship playoffs.
         </p>
 
+       <div class="hero-highlights">
 
+    <span>👥 Players</span>
+    <span>⚽ Fixtures</span>
+    <span>🏆 MVP Awards</span>
+    <span>🔥 Live Season</span>
 
-        <!-- BUTTONS -->
+</div>
 
         <div class="hero-buttons">
 
-    <a href="register.php"
-    class="hero-btn hero-btn-primary">
+            <a href="register.php"
+               class="hero-btn hero-btn-primary">
 
-    Join Tournament
+                Join Tournament
 
-    </a>
+            </a>
 
+            <a href="standings.php"
+               class="hero-btn hero-btn-secondary">
 
+                View Standings
+		
+            </a>
+	   
 
-    <a href="fixtures.php"
-    class="hero-btn hero-btn-secondary">
+        </div>
 
-    Upcoming Fixtures
+<div class="scroll-indicator">
 
-    </a>
+    <div class="scroll-line"></div>
 
-	</div>
+    <i class="fas fa-angle-down"></i>
+
+</div>
 
     </div>
 
 </section>
 
+<!-- LIVE SHOWCASE -->
+
 <?php
 
-// TOTAL PLAYERS
+/* UPCOMING / FEATURED MATCH */
 
-$total_players = mysqli_num_rows(
+$featured_match = mysqli_query($conn,"
+SELECT
+f.*,
+p1.player_name AS home_name,
+p1.team_name AS home_country,
+p2.player_name AS away_name,
+p2.team_name AS away_country
+FROM fixtures f
+JOIN players p1 ON f.home_player_id = p1.id
+JOIN players p2 ON f.away_player_id = p2.id
+WHERE match_status='pending'
+ORDER BY round_no ASC, id ASC
+LIMIT 1
+");
 
-mysqli_query($conn,
-"SELECT * FROM players")
-
-);
-
-
-// TOTAL MATCHES
-
-$total_matches = mysqli_num_rows(
-
-mysqli_query($conn,
-"SELECT * FROM fixtures")
-
-);
-
-
-// COMPLETED MATCHES
-
-$completed_matches = mysqli_num_rows(
-
-mysqli_query($conn,
-
-"SELECT * FROM fixtures
- WHERE match_status='completed'")
-
-);
+$featured = mysqli_fetch_assoc($featured_match);
 
 
-// TOP SCORER
+/* LATEST RESULT */
 
-$top_scorer = mysqli_fetch_assoc(
+$latest_result = mysqli_query($conn,"
+SELECT
+f.*,
+p1.player_name AS home_name,
+p2.player_name AS away_name,
+mvp.player_name AS mvp_name
+FROM fixtures f
+JOIN players p1 ON f.home_player_id = p1.id
+JOIN players p2 ON f.away_player_id = p2.id
+LEFT JOIN players mvp ON f.mvp_player_id = mvp.id
+WHERE f.match_status='completed'
+ORDER BY f.id DESC
+LIMIT 1
+");
 
-mysqli_query($conn,
+$result = mysqli_fetch_assoc($latest_result);
 
-"SELECT standings.*,
-        players.player_name
 
-FROM standings
+/* LEAGUE LEADER */
 
-JOIN players
-ON standings.player_id = players.id
+$leader_query = mysqli_query($conn,"
+SELECT
+s.*,
+p.player_name,
+p.team_name
+FROM standings s
+JOIN players p ON s.player_id = p.id
+ORDER BY s.points DESC,
+s.goal_difference DESC
+LIMIT 1
+");
 
-ORDER BY goals_for DESC
+$leader = mysqli_fetch_assoc($leader_query);
 
-LIMIT 1"
 
-)
+/* PLAYOFF FEATURE */
 
-);
+$playoff_query = mysqli_query($conn,"
+SELECT *
+FROM playoff_matches
+ORDER BY id DESC
+LIMIT 1
+");
+
+$playoff = mysqli_fetch_assoc($playoff_query);
+
+?>
+
+<section class="showcase-section">
+
+    <div class="showcase-slider">
+
+        <div class="slider-progress">
+
+            <div class="slider-progress-fill"></div>
+
+        </div>
+
+        <div class="showcase-track">
+
+            <!-- FEATURED MATCH -->
+
+            <div class="showcase-slide active">
+
+                <div class="slide-badge">
+
+                    ⚽ FEATURED MATCH
+
+                </div>
+
+                <h2>
+
+                    <?= strtoupper($featured['home_name']) ?>
+
+                    <span>VS</span>
+
+                    <?= strtoupper($featured['away_name']) ?>
+
+                </h2>
+
+                <p>
+
+                    Round <?= $featured['round_no']; ?>
+
+                </p>
+
+                <a href="fixtures.php"
+                   class="slide-btn">
+
+                    View Fixtures
+
+                </a>
+
+            </div>
+
+
+            <!-- LATEST RESULT -->
+
+            <div class="showcase-slide">
+
+                <div class="slide-badge">
+
+                    🏆 LATEST RESULT
+
+                </div>
+
+                <h2>
+
+                    <?= $result['home_score']; ?>
+
+                    -
+
+                    <?= $result['away_score']; ?>
+
+                </h2>
+
+                <p>FINAL SCORE</p>
+
+                <a href="results.php"
+                   class="slide-btn">
+
+                    View Results
+
+                </a>
+
+            </div>
+
+
+            <!-- LEAGUE LEADER -->
+
+            <div class="showcase-slide">
+
+                <div class="slide-badge">
+
+                    📊 LEAGUE LEADER
+
+                </div>
+
+                <h2>
+
+                    <?= strtoupper($leader['player_name']); ?>
+
+                </h2>
+
+                <p>
+
+                    <?= $leader['points']; ?> Points
+                    •
+                    GD <?= $leader['goal_difference']; ?>
+
+                </p>
+
+                <a href="standings.php"
+                   class="slide-btn">
+
+                    View Standings
+
+                </a>
+
+            </div>
+
+
+            <!-- PLAYOFFS -->
+
+            <div class="showcase-slide">
+
+                <div class="slide-badge">
+
+                    🔥 PLAYOFFS
+
+                </div>
+
+                <h2>
+
+                    <?= strtoupper($playoff['stage']); ?>
+
+                </h2>
+
+                <p>
+
+                    Series Group
+                    <?= $playoff['series_group']; ?>
+
+                </p>
+
+                <a href="playoffs.php"
+                   class="slide-btn">
+
+                    View Playoffs
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <button class="slider-arrow prev">
+
+            ❮
+
+        </button>
+
+        <button class="slider-arrow next">
+
+            ❯
+
+        </button>
+
+        <div class="slider-counter">
+
+            01 / 04
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* SHOWCASE */
+
+.showcase-section{
+
+    padding:40px 20px 100px;
+
+}
+
+.showcase-slider{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+.showcase-slide{
+
+    display:none;
+
+    text-align:center;
+
+    padding:70px 30px;
+
+    border-radius:30px;
+
+    background:
+    rgba(18,18,18,.75);
+
+    border:
+    1px solid rgba(255,153,0,.15);
+
+    box-shadow:
+    0 0 0 1px rgba(255,153,0,.08),
+    0 0 60px rgba(255,153,0,.06),
+    0 20px 50px rgba(0,0,0,.45);
+
+    backdrop-filter:blur(16px);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.showcase-slide.active{
+
+    display:block;
+
+    animation:
+    slideFade .6s ease;
+
+}
+
+@keyframes slideFade{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+.slide-badge{
+
+    display:inline-block;
+
+    padding:12px 22px;
+
+    border-radius:999px;
+
+    background:
+    rgba(255,153,0,.1);
+
+    color:#ff9900;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.showcase-slide h2{
+
+    font-size:64px;
+
+    margin-bottom:15px;
+
+    font-family:'Orbitron',sans-serif;
+
+}
+
+.showcase-slide h2 span{
+
+    color:#ff9900;
+
+}
+
+.showcase-slide p{
+
+    color:#bdbdbd;
+
+    font-size:20px;
+
+    margin-bottom:35px;
+
+}
+
+.slide-btn{
+
+    display:inline-block;
+
+    padding:16px 30px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff9900,
+    #ff6600);
+
+    color:black;
+
+}
+
+.showcase-slide::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    background:#ff9900;
+
+    filter:blur(140px);
+
+    opacity:.08;
+
+    top:-50px;
+
+    right:-50px;
+
+}
+
+@media(max-width:768px){
+
+    .showcase-slide{
+
+        padding:50px 20px;
+
+    }
+
+    .showcase-slide h2{
+
+        font-size:36px;
+
+    }
+
+    .showcase-slide p{
+
+        font-size:16px;
+
+    }
+
+}
+
+.slider-progress{
+
+    width:100%;
+    height:4px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border-radius:999px;
+
+    margin-bottom:20px;
+
+    overflow:hidden;
+
+}
+
+.slider-progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff9900,
+        #ff6600
+    );
+
+    animation:
+    sliderProgress 5s linear infinite;
+
+}
+
+@keyframes sliderProgress{
+
+    from{
+        width:0%;
+    }
+
+    to{
+        width:100%;
+    }
+
+}
+
+.slider-arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:
+    translateY(-50%);
+
+    width:60px;
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:28px;
+
+    background:
+    rgba(255,153,0,.08);
+
+    border:
+    1px solid rgba(255,153,0,.15);
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+
+    z-index:10;
+
+}
+
+.slider-arrow:hover{
+
+    transform:
+    translateY(-50%)
+    scale(1.08);
+
+    background:
+    rgba(255,153,0,.18);
+
+}
+
+.prev{
+
+    left:-30px;
+
+}
+
+.next{
+
+    right:-30px;
+
+}
+
+.slider-counter{
+
+    position:absolute;
+
+    right:30px;
+
+    bottom:25px;
+
+    color:#888;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+</style>
+
+<?php
+
+/* LEAGUE LEADER */
+
+$leader = mysqli_fetch_assoc(mysqli_query($conn,"
+SELECT s.*, p.player_name
+FROM standings s
+JOIN players p ON s.player_id = p.id
+ORDER BY s.points DESC, s.goal_difference DESC
+LIMIT 1
+"));
+
+/* TOP SCORER */
+
+$top_scorer = mysqli_fetch_assoc(mysqli_query($conn,"
+SELECT s.goals_for, p.player_name
+FROM standings s
+JOIN players p ON s.player_id = p.id
+ORDER BY s.goals_for DESC
+LIMIT 1
+"));
+
+/* MVP LEADER */
+
+$mvp = mysqli_fetch_assoc(mysqli_query($conn,"
+SELECT
+COUNT(*) as total_mvps,
+p.player_name
+FROM fixtures f
+JOIN players p ON f.mvp_player_id = p.id
+WHERE f.mvp_player_id IS NOT NULL
+GROUP BY f.mvp_player_id
+ORDER BY total_mvps DESC
+LIMIT 1
+"));
 
 ?>
 
@@ -570,105 +1432,72 @@ LIMIT 1"
     <div class="stats-grid">
 
 
-        <!-- PLAYERS -->
+   <div class="stat-card">
 
-        <div class="stat-card">
+    <div class="stat-icon">🏆</div>
 
-            <div class="stat-icon">
-                👥
-            </div>
+    <div class="stat-number">
+        <?= strtoupper($leader['player_name']); ?>
+    </div>
 
-            <div class="stat-number">
+    <div class="stat-label">
+        League Leader • <?= $leader['points']; ?> PTS
+    </div>
 
-                <?php echo $total_players; ?>
-
-            </div>
-
-            <div class="stat-label">
-                Registered Players
-            </div>
-
-        </div>
+</div>
 
 
+<div class="stat-card">
 
-        <!-- MATCHES -->
+    <div class="stat-icon">⚽</div>
 
-        <div class="stat-card">
+    <div class="stat-number">
+        <?= strtoupper($top_scorer['player_name']); ?>
+    </div>
 
-            <div class="stat-icon">
-                ⚽
-            </div>
+    <div class="stat-label">
+        <?= $top_scorer['goals_for']; ?> Goals
+    </div>
 
-            <div class="stat-number">
-
-                <?php echo $total_matches; ?>
-
-            </div>
-
-            <div class="stat-label">
-                Total Fixtures
-            </div>
-
-        </div>
+</div>
 
 
+<div class="stat-card">
 
-        <!-- COMPLETED -->
+    <div class="stat-icon">👑</div>
 
-        <div class="stat-card">
+    <div class="stat-number">
 
-            <div class="stat-icon">
-                ✅
-            </div>
+        <?= !empty($mvp['player_name'])
+            ? strtoupper($mvp['player_name'])
+            : 'N/A'; ?>
 
-            <div class="stat-number">
+    </div>
 
-                <?php echo $completed_matches; ?>
+    <div class="stat-label">
 
-            </div>
+        <?= !empty($mvp['total_mvps'])
+            ? $mvp['total_mvps'].' MVP Awards'
+            : 'No MVP Yet'; ?>
 
-            <div class="stat-label">
-                Completed Matches
-            </div>
+    </div>
 
-        </div>
+</div>
 
 
+<div class="stat-card">
 
-        <!-- TOP SCORER -->
+    <div class="stat-icon">🔥</div>
 
-        <div class="stat-card">
+    <div class="stat-number">
+        SEASON 1
+    </div>
 
-            <div class="stat-icon">
-                🏆
-            </div>
+    <div class="stat-label">
+        LIVE NOW
+    </div>
 
-            <div class="stat-number">
-
-                <?php
-
-                if($top_scorer){
-
-                    echo $top_scorer['goals_for'];
-
-                }else{
-
-                    echo 0;
-
-                }
-
-                ?>
-
-            </div>
-
-            <div class="stat-label">
-
-                Top Scorer Goals
-
-            </div>
-
-        </div>
+</div>
 
     </div>
 
@@ -833,16 +1662,15 @@ LIMIT 1"
 
 .stat-number{
 
-    font-size:58px;
+    font-size:32px;
 
-    font-weight:bold;
+    font-weight:800;
 
     color:#ff9900;
 
-    margin-bottom:15px;
+    margin-bottom:12px;
 
-    text-shadow:
-    0 0 20px rgba(255,153,0,0.5);
+    word-break:break-word;
 
 }
 
@@ -880,7 +1708,7 @@ LIMIT 1"
 
     .stat-number{
 
-        font-size:46px;
+        font-size:20px;
 
     }
 
@@ -1572,10 +2400,97 @@ document
 
 };
 
+
+const slides =
+document.querySelectorAll(
+'.showcase-slide'
+);
+
+const counter =
+document.querySelector(
+'.slider-counter'
+);
+
+let current = 0;
+
+function showSlide(index){
+
+    slides.forEach(slide => {
+
+        slide.classList.remove(
+            'active'
+        );
+
+    });
+
+    slides[index]
+    .classList
+    .add('active');
+
+    counter.textContent =
+    String(index + 1)
+    .padStart(2,'0')
+    +
+    ' / ' +
+    String(slides.length)
+    .padStart(2,'0');
+
+}
+
+function nextSlide(){
+
+    current++;
+
+    if(current >= slides.length){
+
+        current = 0;
+
+    }
+
+    showSlide(current);
+
+}
+
+function prevSlide(){
+
+    current--;
+
+    if(current < 0){
+
+        current =
+        slides.length - 1;
+
+    }
+
+    showSlide(current);
+
+}
+
+document
+.querySelector('.next')
+.addEventListener(
+'click',
+nextSlide
+);
+
+document
+.querySelector('.prev')
+.addEventListener(
+'click',
+prevSlide
+);
+
+setInterval(
+nextSlide,
+5000
+);
+
+showSlide(0);
+
+
 </script>
 
 
-</body>
 <?php
 
 $recent_results = mysqli_query($conn,
@@ -1597,7 +2512,7 @@ WHERE match_status='completed'
 
 ORDER BY fixtures.id DESC
 
-LIMIT 6"
+LIMIT 3"
 
 );
 
@@ -1816,13 +2731,55 @@ LIMIT 6"
 .result-card:hover{
 
     transform:
-    translateY(-10px);
+    translateY(-12px) scale(1.02);
 
     border-color:
-    rgba(255,153,0,0.45);
+    rgba(255,153,0,0.55);
 
     box-shadow:
-    0 0 35px rgba(255,153,0,0.12);
+    0 0 45px rgba(255,153,0,0.18);
+
+}
+
+.result-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,153,0,.08),
+        transparent 60%
+    );
+
+    pointer-events:none;
+
+}
+
+.round-badge{
+
+    box-shadow:0 0 20px rgba(255,153,0,.18);
+
+}
+
+.score-box{
+
+    animation:scoreGlow 3s infinite;
+
+}
+
+@keyframes scoreGlow{
+
+    0%,100%{
+        text-shadow:0 0 20px rgba(255,153,0,.45);
+    }
+
+    50%{
+        text-shadow:0 0 40px rgba(255,153,0,.9);
+    }
 
 }
 
@@ -1989,305 +2946,6 @@ LIMIT 5"
 
 
 
-<!-- LEADERBOARD SECTION -->
-
-<section class="leaderboard-section">
-
-    <div class="section-title">
-
-        TOP LEADERBOARD
-
-    </div>
-
-
-
-    <div class="leaderboard-container">
-
-
-        <?php
-
-        $rank = 1;
-
-        while($row = mysqli_fetch_assoc($leaders)){
-
-        ?>
-
-
-
-        <div class="leaderboard-card">
-
-
-            <!-- RANK -->
-
-            <div class="leader-rank">
-
-                #<?php echo $rank; ?>
-
-            </div>
-
-
-
-            <!-- PLAYER -->
-
-            <div class="leader-info">
-
-                <div class="leader-name">
-
-                    <?php echo $row['player_name']; ?>
-
-                </div>
-
-                <div class="leader-stats">
-
-                    W:
-                    <?php echo $row['wins']; ?>
-
-                    • GD:
-                    <?php echo $row['goal_difference']; ?>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- POINTS -->
-
-            <div class="leader-points">
-
-                <?php echo $row['points']; ?>
-
-                <span>PTS</span>
-
-            </div>
-
-        </div>
-
-
-
-        <?php
-
-        $rank++;
-
-        }
-
-        ?>
-
-    </div>
-
-</section>
-
-
-
-<style>
-
-/* LEADERBOARD */
-
-.leaderboard-section{
-
-    padding:120px 60px;
-
-}
-
-
-
-/* CONTAINER */
-
-.leaderboard-container{
-
-    max-width:1000px;
-
-    margin:auto;
-
-}
-
-
-
-/* CARD */
-
-.leaderboard-card{
-
-    background:
-    rgba(18,18,18,0.78);
-
-    border:
-    1px solid rgba(255,153,0,0.12);
-
-    border-radius:22px;
-
-    padding:28px 35px;
-
-    margin-bottom:22px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    backdrop-filter:blur(14px);
-
-    transition:0.35s;
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-
-/* GLOW */
-
-.leaderboard-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:160px;
-
-    height:160px;
-
-    background:#ff9900;
-
-    filter:blur(100px);
-
-    opacity:0.07;
-
-    top:-40px;
-
-    right:-40px;
-
-}
-
-
-
-/* HOVER */
-
-.leaderboard-card:hover{
-
-    transform:translateY(-6px);
-
-    border-color:
-    rgba(255,153,0,0.5);
-
-    box-shadow:
-    0 0 35px rgba(255,153,0,0.12);
-
-}
-
-
-
-/* RANK */
-
-.leader-rank{
-
-    font-size:34px;
-
-    font-weight:bold;
-
-    color:#ff9900;
-
-    width:90px;
-
-    text-shadow:
-    0 0 18px rgba(255,153,0,0.5);
-
-}
-
-
-
-/* INFO */
-
-.leader-info{
-
-    flex:1;
-
-}
-
-
-
-.leader-name{
-
-    font-size:24px;
-
-    font-weight:bold;
-
-    margin-bottom:10px;
-
-}
-
-
-
-.leader-stats{
-
-    color:#a8a8a8;
-
-    font-size:15px;
-
-}
-
-
-
-/* POINTS */
-
-.leader-points{
-
-    font-size:42px;
-
-    font-weight:bold;
-
-    color:#ff9900;
-
-    text-shadow:
-    0 0 20px rgba(255,153,0,0.55);
-
-}
-
-
-
-.leader-points span{
-
-    font-size:15px;
-
-    color:#ccc;
-
-    margin-left:5px;
-
-}
-
-
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .leaderboard-section{
-
-        padding:90px 20px;
-
-    }
-
-    .leaderboard-card{
-
-        flex-direction:column;
-
-        gap:20px;
-
-        text-align:center;
-
-    }
-
-    .leader-rank{
-
-        width:auto;
-
-    }
-
-}
-
-</style>
 
 <?php
 
@@ -2310,7 +2968,7 @@ WHERE match_status='pending'
 
 ORDER BY round_no ASC
 
-LIMIT 6"
+LIMIT 4"
 
 );
 
@@ -2970,7 +3628,7 @@ LIMIT 4"
 
     <div class="footer-logo">
 
-        🏆 COE
+        COE
 
     </div>
 
@@ -3355,4 +4013,60 @@ LIMIT 4"
 
 </style>
 
+
+<style>
+.fade-up{opacity:0;transform:translateY(40px);transition:.8s cubic-bezier(.22,.61,.36,1);}
+.fade-up.show{opacity:1;transform:none;}
+.fixture-vs{animation:vsPulse 2s infinite;}
+.playoff-vs{animation:battlePulse 2.5s infinite;}
+.stat-card,.result-card,.fixture-card,.playoff-card{animation:cardFloat 6s ease-in-out infinite;}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes vsPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes battlePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+const sections=document.querySelectorAll('.stats-section,.results-section,.fixtures-section,.playoff-section');
+sections.forEach(el=>el.classList.add('fade-up'));
+const obs=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+   if(e.isIntersecting){e.target.classList.add('show');}
+ });
+},{threshold:.15});
+sections.forEach(el=>obs.observe(el));
+});
+</script>
+
+<style>
+.top-player-card::after{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);
+transition:.8s;
+}
+.top-player-card:hover::after{left:100%;}
+
+.fixture-card{
+background:linear-gradient(135deg,rgba(20,20,20,.95),rgba(10,10,10,.95));
+}
+.fixture-vs{
+font-size:42px!important;
+font-weight:900;
+color:#ff9900;
+}
+
+.playoff-card::after{
+content:'';
+position:absolute;
+inset:0;
+background:radial-gradient(circle at top right,rgba(255,153,0,.08),transparent 60%);
+pointer-events:none;
+}
+</style>
+</body>
 </html>
