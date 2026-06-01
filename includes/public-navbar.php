@@ -124,27 +124,15 @@ rel="stylesheet">
 
     <a href="index.php">HOME</a>
 
-    <details>
+    
 
-        <summary>
-            TOURNAMENT
-        </summary>
+<a href="standings.php">STANDINGS</a>
 
-        <a href="standings.php">
-            Standings
-        </a>
+<a href="fixtures.php">FIXTURES</a>
 
-        <a href="fixtures.php">
-            Fixtures
-        </a>
+<a href="results.php">RESULTS</a>
 
-        <a href="results.php">
-            Results
-        </a>
-
-    </details>
-
-    <a href="stats.php">
+<a href="stats.php">
         STATS
     </a>
 
@@ -161,7 +149,7 @@ rel="stylesheet">
 
 </div>
 
-
+<div id="page-transition"></div>
 
 <style>
 
@@ -264,7 +252,7 @@ rel="stylesheet">
         drop-shadow(0 0 8px rgba(255,153,0,.5))
         drop-shadow(0 0 20px rgba(255,153,0,.3));
 
-    transition:.4s ease;
+    transition:.22s ease;
 
 }
 
@@ -662,7 +650,11 @@ rel="stylesheet">
 
     max-width:420px;
 
-    height:100dvh;
+    height:100vh;
+
+    min-height:100vh;
+
+    padding-bottom:120px;
 
     background:
     linear-gradient(
@@ -671,7 +663,9 @@ rel="stylesheet">
         #050505
     );
 
-    padding:90px 20px 30px;
+    padding:90px 20px 120px;
+
+    -webkit-overflow-scrolling:touch;
 
     overflow-y:auto;
 
@@ -793,6 +787,9 @@ rel="stylesheet">
 
 }
 
+
+
+
 .mobile-login{
 
     display:flex !important;
@@ -837,28 +834,18 @@ body{
     opacity:1;
     transform:none;
 
-    transition:.4s;
+    transition:.35s;
 }
 
-.mobile-menu.active a:nth-child(2){
-    transition-delay:.1s;
-}
+.mobile-menu.active a:nth-child(2){transition-delay:.05s;}
+.mobile-menu.active a:nth-child(3){transition-delay:.10s;}
+.mobile-menu.active a:nth-child(4){transition-delay:.15s;}
+.mobile-menu.active a:nth-child(5){transition-delay:.20s;}
+.mobile-menu.active a:nth-child(6){transition-delay:.25s;}
+.mobile-menu.active .mobile-login{transition-delay:.30s;}
 
-.mobile-menu.active details{
-    transition-delay:.2s;
-}
 
-.mobile-menu.active a:nth-child(4){
-    transition-delay:.3s;
-}
 
-.mobile-menu.active a:nth-child(5){
-    transition-delay:.4s;
-}
-
-.mobile-menu.active .mobile-login{
-    transition-delay:.5s;
-}
 
 .mobile-season{
 
@@ -918,11 +905,76 @@ body{
 }
 
 
+@media (max-height:700px){
+
+    .mobile-menu{
+        padding:70px 16px 80px;
+        gap:8px;
+    }
+
+    .mobile-header{
+        font-size:24px;
+        margin-bottom:8px;
+    }
+
+    .mobile-season{
+        font-size:11px;
+        margin-top:4px;
+    }
+
+    .mobile-menu a,
+    .mobile-menu summary{
+        min-height:48px;
+        padding:12px 16px;
+        font-size:14px;
+    }
+
+    .mobile-menu details a{
+        margin:4px;
+    }
+}
+
+
+#page-transition{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#050505;
+
+    z-index:999999;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:opacity .25s ease;
+
+}
+
+#page-transition.active{
+
+    opacity:1;
+
+}
+
+
+body{
+    animation:pageFadeIn .3s ease;
+}
+
+@keyframes pageFadeIn{
+    from{opacity:.7;}
+    to{opacity:1;}
+}
+
 </style>
 
 
 
 <script>
+
 
 function toggleMenu(){
 
@@ -943,4 +995,46 @@ function toggleMenu(){
 
 }
 
+document.addEventListener('DOMContentLoaded',()=>{
+
+const transition =
+document.getElementById('page-transition');
+
+document
+.querySelectorAll('a')
+.forEach(link=>{
+
+const href = link.getAttribute('href');
+
+if(
+href &&
+!href.startsWith('#') &&
+!href.startsWith('javascript:')
+){
+
+link.addEventListener('click',e=>{
+
+if(link.target === '_blank') return;
+
+e.preventDefault();
+
+transition.classList.add('active');
+
+setTimeout(()=>{
+window.location.href = href;
+},100);
+
+});
+
+}
+
+});
+
+window.addEventListener('pageshow',()=>{
+
+transition.classList.remove('active');
+
+});
+
+});
 </script>

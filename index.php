@@ -750,6 +750,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 }
 
+
+
     </style>
 
 </head>
@@ -4067,6 +4069,47 @@ inset:0;
 background:radial-gradient(circle at top right,rgba(255,153,0,.08),transparent 60%);
 pointer-events:none;
 }
+
+@media (max-width:768px){
+
+    /* Disable heavy hero animations */
+
+    .hero::before{
+        animation:none;
+        opacity:.08;
+    }
+
+    .hero::after{
+        animation:none;
+        opacity:.35;
+    }
+
+    .hero-title span{
+        animation:none;
+    }
+
+    .hero-title::after{
+        animation:none;
+        opacity:.5;
+    }
+
+    /* Disable card floating animations */
+
+    .stat-card,
+    .result-card,
+    .fixture-card,
+    .playoff-card{
+        animation:none !important;
+    }
+
+    /* Slow down showcase */
+
+    .showcase-slide.active{
+        animation:slideFade .3s ease;
+    }
+
+}
+
 </style>
 </body>
 </html>
