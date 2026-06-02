@@ -1,3 +1,4 @@
+
 <head>
 
 <link rel="preconnect"
@@ -10,152 +11,14 @@ crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Exo+2:wght@400;500;600;700&display=swap"
 rel="stylesheet">
 
-</head>
-
-<div class="navbar">
-
-    <div class="logo-section">
-
-        <div class="logo-icon">
-    <img src="assets/images/coe-hub.png" alt="COE Logo">
-</div>
-
-        <div class="logo-info">
-
-            <div class="logo-text">
-                COE
-            </div>
-
-            <div class="logo-subtitle">
-                Champions of eFootball
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="nav-center">
-
-        <a href="index.php">HOME</a>
-
-        <div class="dropdown">
-
-            <button class="dropdown-btn">
-
-                TOURNAMENT
-
-                <span>▼</span>
-
-            </button>
-
-            <div class="dropdown-menu">
-
-                <a href="standings.php">
-                    Standings
-                </a>
-
-                <a href="fixtures.php">
-                    Fixtures
-                </a>
-
-                <a href="results.php">
-                    Results
-                </a>
-
-            </div>
-
-        </div>
-
-        <a href="stats.php">
-            STATS
-        </a>
-
-        <a href="playoffs.php">
-            PLAYOFFS
-        </a>
-
-    </div>
-
-    <div class="nav-right">
-
-        <div class="season-live">
-
-            ⚡ SEASON 1 LIVE
-
-        </div>
-
-        <a href="login.php"
-           class="admin-btn">
-
-            ADMIN
-
-        </a>
-
-        <div class="menu-toggle"
-             onclick="toggleMenu()">
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </div>
-
-    </div>
-
-</div>
-
-<div class="menu-overlay"
-     id="menuOverlay"
-     onclick="toggleMenu()">
-</div>
-
-<div class="mobile-menu"
-     id="mobileMenu">
-
-<div class="mobile-header">
-
-    🏆 COE
-
-    <div class="mobile-season">
-        ⚡ SEASON 1 LIVE
-    </div>
-
-</div>
-
-    <a href="index.php">HOME</a>
-
-    
-
-<a href="standings.php">STANDINGS</a>
-
-<a href="fixtures.php">FIXTURES</a>
-
-<a href="results.php">RESULTS</a>
-
-<a href="stats.php">
-        STATS
-    </a>
-
-    <a href="playoffs.php">
-        PLAYOFFS
-    </a>
-
-    <a href="login.php"
-       class="mobile-login">
-
-        ADMIN LOGIN
-
-    </a>
-
-</div>
-
-<div id="page-transition"></div>
-
 <style>
 
 /* ====================================
    COE NAVBAR V2 - SEASON 1
 ==================================== */
+
+
+
 
 *{
     margin:0;
@@ -960,18 +823,154 @@ body{
 }
 
 
-body{
-    animation:pageFadeIn .3s ease;
-}
 
-@keyframes pageFadeIn{
-    from{opacity:.7;}
     to{opacity:1;}
 }
 
 </style>
 
+</head>
 
+<div class="navbar">
+
+    <div class="logo-section">
+
+        <div class="logo-icon">
+    <img src="assets/images/coe-hub.png" alt="COE Logo">
+</div>
+
+        <div class="logo-info">
+
+            <div class="logo-text">
+                COE
+            </div>
+
+            <div class="logo-subtitle">
+                Champions of eFootball
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="nav-center">
+
+        <a href="index.php">HOME</a>
+
+        <div class="dropdown">
+
+            <button class="dropdown-btn">
+
+                TOURNAMENT
+
+                <span>▼</span>
+
+            </button>
+
+            <div class="dropdown-menu">
+
+                <a href="standings.php">
+                    Standings
+                </a>
+
+                <a href="fixtures.php">
+                    Fixtures
+                </a>
+
+                <a href="results.php">
+                    Results
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="stats.php">
+            STATS
+        </a>
+
+        <a href="playoffs.php">
+            PLAYOFFS
+        </a>
+
+    </div>
+
+    <div class="nav-right">
+
+        <div class="season-live">
+
+            ⚡ SEASON 1 LIVE
+
+        </div>
+
+        <a href="login.php"
+           class="admin-btn">
+
+            ADMIN
+
+        </a>
+
+        <div class="menu-toggle"
+             onclick="toggleMenu()">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="menu-overlay"
+     id="menuOverlay"
+     onclick="toggleMenu()">
+</div>
+
+<div class="mobile-menu"
+     id="mobileMenu">
+
+<div class="mobile-header">
+
+    🏆 COE
+
+    <div class="mobile-season">
+        ⚡ SEASON 1 LIVE
+    </div>
+
+</div>
+
+    <a href="index.php">HOME</a>
+
+    
+
+<a href="standings.php">STANDINGS</a>
+
+<a href="fixtures.php">FIXTURES</a>
+
+<a href="results.php">RESULTS</a>
+
+<a href="stats.php">
+        STATS
+    </a>
+
+    <a href="playoffs.php">
+        PLAYOFFS
+    </a>
+
+    <a href="login.php"
+       class="mobile-login">
+
+        ADMIN LOGIN
+
+    </a>
+
+</div>
+
+<div id="page-transition"></div>
+
+<body>
 
 <script>
 
@@ -1038,3 +1037,5 @@ transition.classList.remove('active');
 
 });
 </script>
+</body>
+
